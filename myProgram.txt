@@ -1,3 +1,4 @@
+/* @pjs preload="helper.txt","LeaderBoard.txt"; */
 
 Snake snake;
 boolean alive = true;
