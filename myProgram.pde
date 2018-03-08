@@ -1,4 +1,3 @@
-
 Snake snake;
 boolean alive = true;
 int snakeLength = 5;
@@ -15,12 +14,12 @@ final int D = -5;
 
 
 final float gridSize = 16;
-final float gridBoxSize = Snake.limbSize + Snake.limbSpacing;
-final float boxSize = (gridBoxSize) * gridSize;
+final float gridBoxSize = 29;
+final float boxSize = 464;
 
 float angle = 0;
 
-final float CAMERA = 3.1 / 4;
+final float CAMERA = 0.775;
 final float DEPTH = 596;
 
 ArrayList<float[]> cameraList;
@@ -68,7 +67,7 @@ void draw(){
     snake.display();
 
   if(!alive){
-    cameraList.clear();
+    //cameraList.clear();
     /*if(isScoreMenu){
       drawNameScreen();
     }
@@ -296,14 +295,17 @@ void keyPressed(){
 class Food{
   float gridSize; 
   float x, y, z;
- static final float size = Snake.limbSize;
- static final float limbSpacing = Snake.limbSpacing;
+ static final float size;
+ static final float limbSpacing;
  Snake snake;
  
   Food(float boxSizein, Snake snakein){
     gridSize = boxSizein;
     snake = snakein;
-    
+	
+	size = Snake.limbSize;    
+	limbSpacing = Snake.limbSpacing;
+
     newPosition();
   }
   
