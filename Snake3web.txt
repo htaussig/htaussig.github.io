@@ -366,7 +366,7 @@ class Food{
 }
 
 
-// Variable to store text currently being typed
+/* Variable to store text currently being typed
 String typing = "";
 int score;
 boolean isScoreMenu = false;
@@ -500,7 +500,7 @@ private void recordScore(String name) {
     }
     return rd;
     
-  }
+  }*/
   
  
 class Limb{
