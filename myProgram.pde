@@ -263,7 +263,7 @@ void ate(){
 void mousePressed(){
   if(!alive){
     if(isScoreMenu){
-     recordScore("3dw4rd"); 
+     //recordScore("3dw4rd"); 
     }
     setup();
     alive = true; 
@@ -292,7 +292,7 @@ void keyPressed(){
   }
   else if(isScoreMenu && key == '\n') {
     if(!typing.equals("")){
-      recordScore(typing);
+      //recordScore(typing);
       isScoreMenu = false;
     }
   } 
