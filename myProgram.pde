@@ -292,7 +292,7 @@ void keyPressed(){
   }
   else if(isScoreMenu && key == '\n') {
     if(!typing.equals("")){
-      //recordScore(typing);
+      recordScore(typing);
       isScoreMenu = false;
     }
   } 
