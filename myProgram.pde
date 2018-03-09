@@ -1,3 +1,4 @@
+/* @pjs preload="helper.txt","LeaderBoard.txt"; */
 Snake snake;
 boolean alive = true;
 int snakeLength = 5;
@@ -42,10 +43,10 @@ void setup(){
  food = new Food(gridSize, snake);
  cameraList = new ArrayList<float[]>();
  
- //f = createFont("Arial", 22);
+ f = createFont("Arial", 22);
  
  // Variable to store text currently being typed
-  /*String typing = "";*/
+  String typing = "";
 }
 
 void draw(){ 
@@ -68,12 +69,12 @@ void draw(){
 
   if(!alive){
     //cameraList.clear();
-    /*if(isScoreMenu){
+    if(isScoreMenu){
       drawNameScreen();
     }
     else{
       drawClickAgain();
-    }*/
+    }
   }
   
 }
@@ -97,8 +98,8 @@ void checkDeath(){
 
 void die(){
   alive = false;
-  /*score = snake.limbs.size();
-  isScoreMenu = true;*/
+  score = snake.limbs.size();
+  isScoreMenu = true;
   cameraList.clear();
 }
 
@@ -239,9 +240,9 @@ void ate(){
 
 void mousePressed(){
   if(!alive){
-    /*if(isScoreMenu){
+    if(isScoreMenu){
      recordScore("3dw4rd"); 
-    }*/
+    }
     setup();
     alive = true; 
   }
@@ -267,7 +268,7 @@ void keyPressed(){
         ate();   
        }*/
   }
-  /*else if(isScoreMenu && key == (int) '\n') {
+  else if(isScoreMenu && key == (int) '\n') {
     if(!typing.equals("")){
       recordScore(typing);        //need to get this to work in online version
       isScoreMenu = false;
@@ -288,23 +289,161 @@ void keyPressed(){
     // Otherwise, concatenate the String
     // Each character typed by the user is added to the end of the String variable.
     typing = typing + key; 
-  }*/
+  }
 }
 
+
+// Variable to store text currently being typed
+String typing = "";
+int score;
+boolean isScoreMenu = false;
+PFont f;
+
+ArrayList<String> highScores= new ArrayList<String>();
+
+private String fileName = "LeaderBoard.txt";
+  private String helperFile = "helper.txt";
+
+void drawNameScreen(){
+ 
+    int indent = (int) (-boxSize / 2) + 25;
+    
+    // Set the font and fill for text
+    textFont(f);
+    fill(13, 232, 17);
+    
+    // Display everything
+    translate(0, -boxSize / 2, boxSize / 2);
+    text("You got a score of " + score + "!", indent, 40);
+    text("Enter your name to save your high score! \nHit enter to save. ", indent, 80);
+    text("Name: " + typing,indent, 170); 
+}
+
+void drawClickAgain(){
+    int indent = (int)  + 25;
+    
+    textFont(f);
+    fill(16, 222, 229);
+    translate(0, -boxSize / 2, boxSize / 2);
+    text("Click to play again!", indent, 40);
+}
+
+void updateLeaderBoard(PrintWriter wr, String name){
+  String newEntry = name + ": " + score;
+  for(int i = 0; i < highScores.size(); i++){
+    String scoreName = highScores.get(i);
+    
+    int scoreIndex = scoreName.indexOf(':') + 2;
+    String oldScoreString = scoreName.substring(scoreIndex);
+    int oldScore = getNumericValue(oldScoreString);
+    
+    if(score > oldScore){
+     highScores.add(i, newEntry);
+     break;
+    }
+    else if(highScores.get(highScores.size() - 1) == scoreName){
+     highScores.add(newEntry); 
+     break;
+    }
+  }
+  printArray(highScores);
+}
+
+int getNumericValue(String numString){
+  int num = 0;
+  int length = numString.length();
+  for(int i = 0; i < length; i++){
+    num += Character.getNumericValue(numString.charAt(i)) * Math.pow(10, length - 1);
+  }
+  return num;
+}
+
+private void recordScore(String name) {
+    BufferedReader rd = openFile(fileName);
+    int i = 0;
+    
+    try {
+      
+      PrintWriter wr = createWriter(helperFile);
+      
+      while (true) {
+        String line = rd.readLine();
+        if(line == null) break;
+        wr.println(line);
+      }
+      
+      //wr.println("it worked");
+      
+      rd.close();
+      wr.close();
+  
+    } catch (IOException ex) {
+      //throw ex;
+      println("error");   //should throw something here
+    } 
+    
+    
+    rd = openFile(helperFile);
+    
+    try {
+      
+      PrintWriter wr = createWriter(fileName);
+      
+     
+      while (true) {
+        String line = rd.readLine();
+        if(line == null) break;
+        highScores.add(line);
+        i++;
+      }
+      
+      updateLeaderBoard(wr, name);
+      
+      for(String scoreName : highScores){
+       wr.println(scoreName); 
+      }
+      
+      highScores.clear();  //in case you play again
+      
+      rd.close();
+      wr.close();
+  
+    } catch (IOException ex) {
+      println("error");
+      //throw ex;
+    }
+  }
+  
+  private BufferedReader openFile(String file){
+    
+    BufferedReader rd = null;
+    
+    while(rd == null){
+      try{
+        rd = createReader(file);
+      } catch (Exception ex) {
+        println("Cannot find data storing file");
+      }
+    }
+    return rd;
+    
+  }
+  
+ 
  
 class Food{
   float gridSize; 
   float x, y, z;
- static final float size;
- static final float limbSpacing;
+  float size;
+ float limbSpacing;
  Snake snake;
  
   Food(float boxSizein, Snake snakein){
     gridSize = boxSizein;
     snake = snakein;
-	
-	size = Snake.limbSize;    
-	limbSpacing = Snake.limbSpacing;
+  
+  size = Snake.limbSize;    
+  limbSpacing = Snake.limbSpacing;
 
     newPosition();
   }
