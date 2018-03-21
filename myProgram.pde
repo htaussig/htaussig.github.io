@@ -1,4 +1,5 @@
 
+
 Snake snake;
 boolean alive = true;
 int snakeLength = 5;
@@ -110,6 +111,7 @@ void die(){
   /*score = snake.limbs.size();
   isScoreMenu = true;*/
   cameraList.clear();
+  clickIndent = (int) -boxSize / 2;
 }
 
 void drawAxes(){
@@ -555,14 +557,12 @@ final int D = -5;
 
 //END OF SNAKE CLASS
 
-
-
 // Variable to store text currently being typed
 String typing = "";
 int score;
 boolean isScoreMenu = false;
 PFont f;
-int trying = 10;
+int clickIndent = (int) -boxSize / 2;
 
 ArrayList<String> highScores= new ArrayList<String>();
 
@@ -588,9 +588,9 @@ void drawClickAgain(){
 
     textFont(f);
     fill(16, 222, 229);
-    translate(0, -boxSize / 2, boxSize / 2);
-    text("Click to play again!", trying, 40);
-    trying++;
+    translate(0, (int) -boxSize / 2, (int) boxSize / 2);
+    text("Click to play again!", clickIndent, 40);
+    clickIndent += 1;
 }
 
 //END OF LEADERBOARD CLASS
