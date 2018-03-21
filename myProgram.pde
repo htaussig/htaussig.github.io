@@ -568,7 +568,7 @@ ArrayList<String> highScores= new ArrayList<String>();
 private String fileName = "LeaderBoard.txt";
   private String helperFile = "helper.txt";
 
-void drawNameScreen(){
+/*void drawNameScreen(){
 
     int indent = (int) (-boxSize / 2) + 25;
 
@@ -580,14 +580,14 @@ void drawNameScreen(){
     translate(0, -boxSize / 2, boxSize / 2);
     text("You got a score of " + score + "!", indent, 40);
     text("Enter your name to save your high score! \nHit enter to save. ", indent, 80);
-    text("Name: " + typing,indent, 170);
-}
+    text("Name: " + typing, indent, 170);
+}*/
 
 void drawClickAgain(){
 
     textFont(f);
     fill(16, 222, 229);
-    translate(0, -boxSize / 2, boxSize / 2);
+    //translate(0, -boxSize / 2, boxSize / 2);
     text("Click to play again!", 25, 20);
 }
 
