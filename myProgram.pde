@@ -277,7 +277,7 @@ void keyPressed(){
       }
 
        /*if(key == ' '){
-        ate();   
+        ate();
        }*/
   }
   else if(isScoreMenu && key == (int) '\n') {
@@ -594,7 +594,7 @@ void drawClickAgain(){
     fill(16, 222, 229);
     translate(0, (int) -boxSize / 2, (int) boxSize / 2);
     text("Click to play again!", clickIndent, 40);
-    clickIndent ++;
+    clickIndent++;
 }
 
 /*void updateLeaderBoard(PrintWriter wr, String name){
