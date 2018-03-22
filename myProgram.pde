@@ -43,7 +43,7 @@ void setup(){
  food = new Food(gridSize, snake);
  cameraList = new ArrayList<float[]>();
 
- clickIndent = (int) -boxSize / 2;
+ clickIndent = -boxSize / 2;
 
  f = createFont("Arial", 22);
 
@@ -305,56 +305,6 @@ void keyPressed(){
 }
 
 
-
-
-
-//END OF SNAKE3 CLASS
-
-class Food{
-  float gridSize;
-  float x, y, z;
- static final float size;
- static final float limbSpacing;
- Snake snake;
-
-  Food(float boxSizein, Snake snakein){
-    gridSize = boxSizein;
-    snake = snakein;
-
-	size = Snake.limbSize;
-	limbSpacing = Snake.limbSpacing;
-
-    newPosition();
-  }
-
-  void newPosition(){
-    setNewPos();
-
-    for(Limb limb : snake.limbs){
-      if(x == limb.x && y == limb.y && z == limb.z){
-      newPosition();
-      return;
-      }
-    }
-
-  }
-
-  private void setNewPos(){
-    x = ((int) random(-gridSize / 2.0, gridSize / 2.0)) * (size + limbSpacing) + gridBoxSize / 2.0;
-    y = ((int) random(-gridSize / 2.0, gridSize / 2.0)) * (size + limbSpacing) + gridBoxSize / 2.0;
-    z = ((int) random(-gridSize / 2.0, gridSize / 2.0)) * (size + limbSpacing) + gridBoxSize / 2.0;
-  }
-
-  void display(){
-    pushMatrix();
-    translate(x, y, z);
-    fill(255, 255, 50);
-    box(size);
-    popMatrix();
-  }
-
-}
-
 //END OF A FOOD CLASS
 
 class Limb{
@@ -561,12 +511,14 @@ final int D = -5;
 //END OF SNAKE CLASS
 
 
+
 // Variable to store text currently being typed
 String typing = "";
 int score;
 boolean isScoreMenu = false;
 PFont f;
-int clickIndent;
+
+float clickIndent;
 
 ArrayList<String> highScores= new ArrayList<String>();
 
@@ -590,113 +542,13 @@ void drawNameScreen(){
 
 void drawClickAgain(){
 
+
+
     textFont(f);
     fill(16, 222, 229);
     translate(0, (int) -boxSize / 2, (int) boxSize / 2);
     text("Click to play again!", clickIndent, 40);
     clickIndent++;
 }
-
-/*void updateLeaderBoard(PrintWriter wr, String name){
-  String newEntry = name + ": " + score;
-  for(int i = 0; i < highScores.size(); i++){
-    String scoreName = highScores.get(i);
-
-    int scoreIndex = scoreName.indexOf(':') + 2;
-    String oldScoreString = scoreName.substring(scoreIndex);
-    int oldScore = getNumericValue(oldScoreString);
-
-    if(score > oldScore){
-     highScores.add(i, newEntry);
-     break;
-    }
-    else if(highScores.get(highScores.size() - 1) == scoreName){
-     highScores.add(newEntry);
-     break;
-    }
-  }
-  printArray(highScores);
-}
-
-int getNumericValue(String numString){
-  int num = 0;
-  int length = numString.length();
-  for(int i = 0; i < length; i++){
-    num += Character.getNumericValue(numString.charAt(i)) * Math.pow(10, length - 1);
-  }
-  return num;
-}
-
-private void recordScore(String name) {
-    BufferedReader rd = openFile(fileName);
-    int i = 0;
-
-    try {
-
-      PrintWriter wr = createWriter(helperFile);
-
-      while (true) {
-        String line = rd.readLine();
-        if(line == null) break;
-        wr.println(line);
-      }
-
-      //wr.println("it worked");
-
-      rd.close();
-      wr.close();
-
-    } catch (IOException ex) {
-      //throw ex;
-      println("error");   //should throw something here
-    }
-
-
-    rd = openFile(helperFile);
-
-    try {
-
-      PrintWriter wr = createWriter(fileName);
-
-
-      while (true) {
-        String line = rd.readLine();
-        if(line == null) break;
-        highScores.add(line);
-        i++;
-      }
-
-      updateLeaderBoard(wr, name);
-
-      for(String scoreName : highScores){
-       wr.println(scoreName);
-      }
-
-      highScores.clear();  //in case you play again
-
-      rd.close();
-      wr.close();
-
-    } catch (IOException ex) {
-      println("error");
-      //throw ex;
-    }
-  }
-
-  private BufferedReader openFile(String file){
-
-    BufferedReader rd = null;
-
-    while(rd == null){
-      try{
-        rd = createReader(file);
-      } catch (Exception ex) {
-        println("Cannot find data storing file");
-      }
-    }
-    return rd;
-
-  }*/
-
 
 //END OF LEADERBOARD CLASS
