@@ -1,13 +1,4 @@
 
-// Variable to store text currently being typed
-String typing = "";
-int score;
-boolean isScoreMenu = false;
-PFont f;
-
-float clickIndent;
-
-
 Snake snake;
 boolean alive = true;
 int snakeLength = 5;
@@ -52,8 +43,6 @@ void setup(){
  food = new Food(gridSize, snake);
  cameraList = new ArrayList<float[]>();
 
- clickIndent = -boxSize / 2;
-
  f = createFont("Arial", 22);
 
  // Variable to store text currently being typed
@@ -90,7 +79,7 @@ void draw(){
   if(!alive){
     cameraList.clear();
     if(isScoreMenu){
-      //drawNameScreen();  //will add this back eventually
+      drawNameScreen();
     }
     else{
       drawClickAgain();
@@ -121,7 +110,6 @@ void die(){
   /*score = snake.limbs.size();
   isScoreMenu = true;*/
   cameraList.clear();
-  clickIndent = (int) -boxSize / 2;
 }
 
 void drawAxes(){
@@ -313,6 +301,54 @@ void keyPressed(){
   }
 }
 
+
+
+//END OF SNAKE3 CLASS
+
+class Food{
+  float gridSize;
+  float x, y, z;
+ static final float size;
+ static final float limbSpacing;
+ Snake snake;
+
+  Food(float boxSizein, Snake snakein){
+    gridSize = boxSizein;
+    snake = snakein;
+
+	size = Snake.limbSize;
+	limbSpacing = Snake.limbSpacing;
+
+    newPosition();
+  }
+
+  void newPosition(){
+    setNewPos();
+
+    for(Limb limb : snake.limbs){
+      if(x == limb.x && y == limb.y && z == limb.z){
+      newPosition();
+      return;
+      }
+    }
+
+  }
+
+  private void setNewPos(){
+    x = ((int) random(-gridSize / 2.0, gridSize / 2.0)) * (size + limbSpacing) + gridBoxSize / 2.0;
+    y = ((int) random(-gridSize / 2.0, gridSize / 2.0)) * (size + limbSpacing) + gridBoxSize / 2.0;
+    z = ((int) random(-gridSize / 2.0, gridSize / 2.0)) * (size + limbSpacing) + gridBoxSize / 2.0;
+  }
+
+  void display(){
+    pushMatrix();
+    translate(x, y, z);
+    fill(255, 255, 50);
+    box(size);
+    popMatrix();
+  }
+
+}
 
 //END OF A FOOD CLASS
 
@@ -521,6 +557,12 @@ final int D = -5;
 
 
 
+// Variable to store text currently being typed
+String typing = "";
+int score;
+boolean isScoreMenu = false;
+PFont f;
+int trying = 10;
 
 ArrayList<String> highScores= new ArrayList<String>();
 
@@ -539,18 +581,16 @@ void drawNameScreen(){
     translate(0, -boxSize / 2, boxSize / 2);
     text("You got a score of " + score + "!", indent, 40);
     text("Enter your name to save your high score! \nHit enter to save. ", indent, 80);
-    text("Name: " + typing, indent, 170);
+    text("Name: " + typing,indent, 170);
 }
 
 void drawClickAgain(){
 
-
-
     textFont(f);
     fill(16, 222, 229);
-    translate(0, (int) -boxSize / 2, (int) boxSize / 2);
-    text("Click to play again!", clickIndent, 40);
-    clickIndent++;
+    translate(0, -boxSize / 2, boxSize / 2);
+    text("Click to play again!", trying, 40);
+    trying++;
 }
 
 //END OF LEADERBOARD CLASS
