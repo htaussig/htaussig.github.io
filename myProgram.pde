@@ -564,7 +564,7 @@ boolean isScoreMenu = false;
 PFont f;
 int clickIndent = (int) -boxSize / 2;
 
-ArrayList<String> highScores= new ArrayList<String>();
+/*ArrayList<String> highScores= new ArrayList<String>();
 
 private String fileName = "LeaderBoard.txt";
   private String helperFile = "helper.txt";
@@ -581,8 +581,8 @@ void drawNameScreen(){
     translate(0, -boxSize / 2, boxSize / 2);
     text("You got a score of " + score + "!", indent, 40);
     text("Enter your name to save your high score! \nHit enter to save. ", indent, 80);
-    text("Name: " + typing,indent, 170);
-}
+    text("Name: " + typing, indent, 170);
+}*/
 
 void drawClickAgain(){
 
