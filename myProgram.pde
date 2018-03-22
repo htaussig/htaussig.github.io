@@ -43,7 +43,7 @@ void setup(){
  food = new Food(gridSize, snake);
  cameraList = new ArrayList<float[]>();
 
- int clickIndent = (int) -boxSize / 2;
+ clickIndent = (int) -boxSize / 2;
 
  f = createFont("Arial", 22);
 
@@ -277,7 +277,7 @@ void keyPressed(){
       }
 
        /*if(key == ' '){
-        ate();
+        ate();   
        }*/
   }
   else if(isScoreMenu && key == (int) '\n') {
@@ -304,7 +304,7 @@ void keyPressed(){
   }
 }
 
- 
+
 
 
 
