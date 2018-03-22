@@ -1,4 +1,13 @@
 
+// Variable to store text currently being typed
+String typing = "";
+int score;
+boolean isScoreMenu = false;
+PFont f;
+
+float clickIndent;
+
+
 Snake snake;
 boolean alive = true;
 int snakeLength = 5;
@@ -512,13 +521,6 @@ final int D = -5;
 
 
 
-// Variable to store text currently being typed
-String typing = "";
-int score;
-boolean isScoreMenu = false;
-PFont f;
-
-float clickIndent;
 
 ArrayList<String> highScores= new ArrayList<String>();
 
