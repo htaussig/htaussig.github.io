@@ -56,6 +56,7 @@ void reInit(){
  snake = new Snake(0, 0, 0, snakeLength);
  food = new Food(gridSize, snake);
  cameraList = new ArrayList<float[]>();
+ trying = -20;
 }
 
 void draw(){
@@ -300,6 +301,7 @@ void keyPressed(){
     typing = typing + key;
   }
 }
+
 
 
 
@@ -555,14 +557,11 @@ final int D = -5;
 
 //END OF SNAKE CLASS
 
-
-
-// Variable to store text currently being typed
 String typing = "";
 int score;
 boolean isScoreMenu = false;
 PFont f;
-int trying = 10;
+int trying = -20;
 
 ArrayList<String> highScores= new ArrayList<String>();
 
@@ -592,5 +591,6 @@ void drawClickAgain(){
     text("Click to play again!", trying, 40);
     trying++;
 }
+
 
 //END OF LEADERBOARD CLASS
