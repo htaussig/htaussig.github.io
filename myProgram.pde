@@ -1,4 +1,4 @@
-/* @pjs font="Arial.ttf"; */
+
 
 Snake snake;
 boolean alive = true;
@@ -44,8 +44,7 @@ void setup(){
  food = new Food(gridSize, snake);
  cameraList = new ArrayList<float[]>();
 
- f = createFont("Arial", 22);
-
+ f = createFont("Comic Sans MS", 22);
  // Variable to store text currently being typed
   /*String typing = "";*/
 }
@@ -301,7 +300,6 @@ void keyPressed(){
     typing = typing + key;
   }
 }
-
 
 //END OF SNAKE3 CLASS
 
