@@ -582,10 +582,10 @@ void drawNameScreen(){
 
 void drawClickAgain(){
 
-    //textFont(f);
+    textFont("", 32);
     fill(16, 222, 229);
     translate(0, -boxSize / 2, boxSize / 2);
-    text("Click to play again!", trying, -trying);
+    text("Click to play again!", trying, 40);
     trying++;
 }
 
