@@ -44,7 +44,7 @@ void setup(){
  food = new Food(gridSize, snake);
  cameraList = new ArrayList<float[]>();
 
- f = createFont("Comic Sans MS", 22);
+ //f = createFont("Comic Sans MS", 22);
  // Variable to store text currently being typed
   /*String typing = "";*/
 }
@@ -79,7 +79,7 @@ void draw(){
   if(!alive){
     cameraList.clear();
     if(isScoreMenu){
-      drawNameScreen();
+      //drawNameScreen();
     }
     else{
       drawClickAgain();
@@ -300,6 +300,7 @@ void keyPressed(){
     typing = typing + key;
   }
 }
+
 
 //END OF SNAKE3 CLASS
 
@@ -556,7 +557,7 @@ final int D = -5;
 String typing = "";
 int score;
 boolean isScoreMenu = false;
-PFont f;
+//PFont f;
 int trying = -20;
 
 ArrayList<String> highScores= new ArrayList<String>();
@@ -569,7 +570,7 @@ void drawNameScreen(){
     int indent = (int) (-boxSize / 2) + 25;
 
     // Set the font and fill for text
-    textFont(f);
+    //textFont(f);
     fill(13, 232, 17);
 
     // Display everything
@@ -581,7 +582,7 @@ void drawNameScreen(){
 
 void drawClickAgain(){
 
-    textFont(f);
+    //textFont(f);
     fill(16, 222, 229);
     translate(0, -boxSize / 2, boxSize / 2);
     text("Click to play again!", trying, -trying);
