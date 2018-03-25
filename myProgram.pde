@@ -1,3 +1,4 @@
+/* @pjs font="Arial.ttf"; */
 
 Snake snake;
 boolean alive = true;
@@ -67,7 +68,6 @@ void draw(){
     drawAxes();
     drawGrid();
     stroke(255,255,255);
-    box(boxSize);
     noStroke();
     if(frameCount % 8 == 0 && alive){
       snake.move();
@@ -134,7 +134,7 @@ void drawAxes(){
 }
 
 void drawGrid(){
-  stroke(255, 40);
+  stroke(254, 40);
   for(int k = 0; k < 3; k++){
     pushMatrix();
     if(k == 1){
@@ -301,8 +301,6 @@ void keyPressed(){
     typing = typing + key;
   }
 }
-
-
 
 
 //END OF SNAKE3 CLASS
