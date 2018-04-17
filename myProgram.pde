@@ -583,7 +583,7 @@ void drawNameScreen(){
 void drawClickAgain(){
 
     //textFont(createFont("", 32));
-    fill(0);
+    fill(255);
     translate(0, -boxSize / 2, boxSize / 2);
     text("You got a score of " + snake.limbs.size(), trying, 60);
     text("Click to play again!", trying, 40);
