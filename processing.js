@@ -2,6 +2,7 @@
 // build script for generating processing.js
 
 var Browser = {
+  console.log('processing js');
   isDomPresent: true,
   navigator: navigator,
   window: window,
