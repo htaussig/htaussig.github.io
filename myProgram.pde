@@ -44,6 +44,8 @@ void setup(){
  food = new Food(gridSize, snake);
  cameraList = new ArrayList<float[]>();
 
+ console.log("heck yeah!");
+
  //f = createFont("Comic Sans MS", 22);
  // Variable to store text currently being typed
   /*String typing = "";*/

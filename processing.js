@@ -786,7 +786,6 @@ module.exports = function finalizeProcessing(Processing, options) {
 
     function loadBlock(index, filename) {
       function callback(block, error) {
-        console.log("yoyoyoyoyo");
         code[index] = block;
         ++loaded;
         if (error) {
@@ -829,6 +828,7 @@ module.exports = function finalizeProcessing(Processing, options) {
    */
   var init = function() {
     document.removeEventListener('DOMContentLoaded', init, false);
+    console.log("Processing.js: Unable to execute pjs sketch.");
 
     // before running through init, clear the instances list, to prevent
     // sketch duplication when page content is dynamically swapped without
