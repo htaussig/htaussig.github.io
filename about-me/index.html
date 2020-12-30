@@ -47,14 +47,18 @@
 	<div>
 		<h3 id="contactMe">Email me! I love meeting new people, and I respond to all emails!</h3>
 
-		<form action="EMAILTHINGurl">
-			<input type="text" placeholder="Name" required>
+		<form action="mailto:contact@yourdomain.com"method=”POST” enctype=”multipart/form-data” name=”EmailForm”>
+		Name:<br>
+		<input type=”text” size=”19″ name=”ContactName”><br><br>
+		Message:<br> <textarea name=”ContactComment” rows=”6″ cols=”20″>
+		</textarea><br><br> <input type=”submit” value=”Submit”> </form>
+			<!-- <input type="text" placeholder="Name" required>
 			<input type="text" placeholder="Email" required>
 			<br>
 			<input type="text" placeholder="Your Message" required>
 			<br>
 			<button type="submit">Send</button>
-		</form>
+		</form> -->
 	</div>
 </body>
 
