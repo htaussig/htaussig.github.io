@@ -8,7 +8,7 @@ body{
 	  font-size:20px;
 	  line-height:30px;
 	  color:#eeeeee;
-	  background-color:#222831;
+	  background-color:#20272F;
 	}
 
 h1,h2,h3 {
@@ -40,6 +40,19 @@ a:visited {
 	padding-right:10px;
 }
 
-.pageTitle {
-	color: #eeeeee;
+.book {
+	
+}
+
+.bookList {
+	font-size: 24px;
+}
+
+#bookCover {
+	width: auto;
+	height: 256px;
+}
+
+#pageTitle {
+	color: #0081c7;
 }
