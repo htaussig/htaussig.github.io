@@ -11,9 +11,20 @@ body{
 	  background-color:#20272F;
 	}
 
+
 h1,h2,h3 {
   font-family:Tahoma, Verdana, sans-serif;
   font-weight:normal;
+}
+
+h2, h3{
+	color: #4EC5F1;
+	margin-bottom: -10px;
+}
+
+
+p {
+	padding-bottom: 18px;
 }
 
 a:link {
@@ -51,6 +62,12 @@ a:visited {
 #bookCover {
 	width: auto;
 	height: 256px;
+}
+
+
+#bookInfo{
+	text-align: left;
+	color:#787878;
 }
 
 #pageTitle {
