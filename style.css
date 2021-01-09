@@ -12,6 +12,19 @@ body{
 	}
 
 
+a:link {
+	color:#00adb5;
+	text-decoration: none;
+}
+
+a:visited {
+	color:#9839eb;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
 h1,h2,h3 {
   font-family:Tahoma, Verdana, sans-serif;
   font-weight:normal;
@@ -35,14 +48,6 @@ hr {
 
 p {
 	padding-bottom: 0px;
-}
-
-a:link {
-	color:#00adb5;
-}
-
-a:visited {
-	color:#9839eb;
 }
 
 .large-img {
@@ -86,11 +91,12 @@ a:visited {
 #bookInfo{
 	text-align: left;
 	color:#787878;
-	padding-bottom: 110px;
+	padding-bottom: 60px;
 }
 
 #pageTitle {
 	color: #0081c7;
+	text-decoration: underline;
 }
 
 #bookDiv {
