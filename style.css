@@ -18,7 +18,7 @@ a:link {
 }
 
 a:visited {
-	color:#9839eb;
+	color:#00adb5;
 }
 
 a:hover {
@@ -107,15 +107,20 @@ p {
 }
 
 #navbar {
-	color: #0081c7;
 
 	position: relative;
 	left: 250px;
-	bottom: 70px;
+	bottom: 53px;
 	/* right: 0px; */
 	
 	/* right: 500; */
 	
     width: 550px;
-    background-color: #767676;
+	background-color: #393e46;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.095), 0 6px 6px rgba(0,0,0,0.115);
+  }
+
+  #navbarlink {
+	padding: 0px 20px 0px 20px;
+	color:#4EC5F1;
   }
