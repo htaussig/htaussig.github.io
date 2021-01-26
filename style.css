@@ -141,3 +141,130 @@ p {
   #writingParagraph {
 	  /* text-indent: 0px; */
   }
+
+  /* firebase stuff */
+  form {
+	width: 380px;
+	margin: 4em auto;
+	padding: 3em 2em 2em 2em;
+	background: #fafafa;
+	border: 1px solid #ebebeb;
+	box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+  }
+  
+  .group { 
+	position: relative; 
+	margin-bottom: 45px; 
+  }
+  
+  input {
+	font-size: 18px;
+	padding: 10px 10px 10px 5px;
+	-webkit-appearance: none;
+	display: block;
+	background: #fafafa;
+	color: #636363;
+	width: 100%;
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid #757575;
+  }
+  
+  input:focus { outline: none; }
+  
+  
+  /* Label */
+  
+  label {
+	color: #999; 
+	font-size: 15px;
+	font-weight: normal;
+	position: absolute;
+	pointer-events: none;
+	left: 5px;
+	top: -15px;
+	transition: all 0.2s ease;
+  }
+  
+  
+  /* active */
+
+  
+ 
+  
+  
+  /* Button */
+  
+  .button {
+	position: relative;
+	display: inline-block;
+	padding: 12px 24px;
+	margin: .3em 0 1em 0;
+	width: 100%;
+	vertical-align: middle;
+	color: #004345;
+	font-size: 16px;
+	line-height: 20px;
+	-webkit-font-smoothing: antialiased;
+	text-align: center;
+	letter-spacing: 1px;
+	background: transparent;
+	border: 2px solid #004345;
+	border-bottom: 2px solid #004345;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: all 0.15s ease;
+  }
+  .button:focus { outline: 0; }
+  
+  
+  /* Button modifiers */
+  
+  .buttonBlue {
+	background: 
+	text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
+  }
+  
+  .buttonBlue:hover { background: #004345;
+  color: #fff;}
+
+ 
+  hgroup { 
+	text-align:center;
+	margin-top: 4em;
+	color: #004300;
+	font-weight: 300; 
+  }
+  
+  #succ {
+	display: none;
+	background-color: #dff0d8;
+	border: 2px solid #dff0d8;
+	border-radius: 5px;  
+	height:40px;
+	text-align:left;
+	top:25%;
+	position: relative;
+	color: #3c763d;
+	margin-left:15px;
+  }
+  #txt{
+	margin-left:15px;
+	margin-top:0%;
+	
+  }
+  #fail {
+	display: none;
+	background-color: #ff9999;
+	border: 2px solid #ff9999;
+	border-radius: 5px;  
+	height:40px;
+	text-align:left;
+	top:50%;
+	position: relative;
+	color: #9F0303;
+	margin-left:15px;
+  }
+  
+  
+  
