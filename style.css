@@ -120,18 +120,19 @@ p {
 #navbar {
 	/* there must be a better way to do this */
 	position: relative;
-	right: -550px; 
+	right: -385px; 
 	bottom: 53px;
 	/* right: 0px; */
 	
 	/* right: 500; */
 	
-    width: 250px;
+    width: 415px;
 	background-color: #393e46;
 	box-shadow: 0 10px 20px rgba(0,0,0,0.095), 0 6px 6px rgba(0,0,0,0.115);
 
 	text-align: center;
   }
+
 
   #navbarlink {
 	padding: 0px 30px 0px 30px;
@@ -142,129 +143,47 @@ p {
 	  /* text-indent: 0px; */
   }
 
-  /* firebase stuff */
-  form {
-	width: 380px;
-	margin: 4em auto;
-	padding: 3em 2em 2em 2em;
-	background: #fafafa;
-	border: 1px solid #ebebeb;
-	box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
-  }
-  
-  .group { 
-	position: relative; 
-	margin-bottom: 45px; 
-  }
-  
-  input {
-	font-size: 18px;
-	padding: 10px 10px 10px 5px;
-	-webkit-appearance: none;
-	display: block;
-	background: #fafafa;
-	color: #636363;
-	width: 100%;
-	border: none;
-	border-radius: 0;
-	border-bottom: 1px solid #757575;
-  }
-  
-  input:focus { outline: none; }
-  
-  
-  /* Label */
-  
-  label {
-	color: #999; 
-	font-size: 15px;
-	font-weight: normal;
-	position: absolute;
-	pointer-events: none;
-	left: 5px;
-	top: -15px;
-	transition: all 0.2s ease;
-  }
-  
-  
-  /* active */
 
-  
- 
-  
-  
-  /* Button */
-  
-  .button {
-	position: relative;
-	display: inline-block;
-	padding: 12px 24px;
-	margin: .3em 0 1em 0;
-	width: 100%;
-	vertical-align: middle;
-	color: #004345;
-	font-size: 16px;
-	line-height: 20px;
-	-webkit-font-smoothing: antialiased;
-	text-align: center;
-	letter-spacing: 1px;
-	background: transparent;
-	border: 2px solid #004345;
-	border-bottom: 2px solid #004345;
-	cursor: pointer;
-	border-radius: 5px;
-	transition: all 0.15s ease;
-  }
-  .button:focus { outline: 0; }
-  
-  
-  /* Button modifiers */
-  
-  .buttonBlue {
-	background: 
-	text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
-  }
-  
-  .buttonBlue:hover { background: #004345;
-  color: #fff;}
+  /* Different rules if on Mobile device */
+  @media (max-width: 500px){
 
- 
-  hgroup { 
-	text-align:center;
-	margin-top: 4em;
-	color: #004300;
-	font-weight: 300; 
-  }
-  
-  #succ {
-	display: none;
-	background-color: #dff0d8;
-	border: 2px solid #dff0d8;
-	border-radius: 5px;  
-	height:40px;
-	text-align:left;
-	top:25%;
-	position: relative;
-	color: #3c763d;
-	margin-left:15px;
-  }
-  #txt{
-	margin-left:15px;
-	margin-top:0%;
+	.large-img {
+		background-color: white;
+		padding: 2px;
+		margin: 10px 10px 5px 10px;
+		width: 118px;
+		height: 118px;
+		object-fit: cover;
+		border-radius: 50%;
+		background-size: cover;
+		background-position: center;
+		border-radius: 50%;
+		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	}
+
+	#navbar {
+		/* there must be a better way to do this */
+		position: relative;
+		left: 0px;
+		bottom: 0px;
+
+		margin: auto; 
+		/* right: 0px; */
+		
+		/* right: 500; */
+		
+		width: 390px;
+		background-color: #393e46;
+		box-shadow: 0 10px 20px rgba(0,0,0,0.095), 0 6px 6px rgba(0,0,0,0.115);
 	
+		text-align: center;
+	  }
+
+	  #navbarlink {
+		
+		padding: 0px 20px 0px 20px;
+		color:#4EC5F1;
+	  }
   }
-  #fail {
-	display: none;
-	background-color: #ff9999;
-	border: 2px solid #ff9999;
-	border-radius: 5px;  
-	height:40px;
-	text-align:left;
-	top:50%;
-	position: relative;
-	color: #9F0303;
-	margin-left:15px;
-  }
-  
   
   
