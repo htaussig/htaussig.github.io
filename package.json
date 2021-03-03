@@ -20,7 +20,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.15.2",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/react-fontawesome": "^0.1.14",
-    "gatsby": "^2.32.8",
+    "gatsby": "^2.32.9",
     "gatsby-image": "^3.0.0",
     "gatsby-plugin-sharp": "^3.0.0",
     "gatsby-remark-images": "^4.0.0",
@@ -30,6 +30,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "require-dir": "^1.2.0",
+    "sharp": "^0.27.2",
     "yarn": "^1.22.10"
   },
   "devDependencies": {
