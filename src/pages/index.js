@@ -7,7 +7,7 @@ import IconLinks from "/src/components/iconLinks"
 
 
 
-var myFaceImg = require('/src/images/taussig.png')
+var myFaceImg = require('/src/images/Taussig.png')
 
 // ------------------------------------------------------------------------------------------------------------------
 
