@@ -4,6 +4,7 @@ author: Viktor E. Frankl
 bookCoverImage: ../../images/BookCovers/mans.jpeg
 rating: 7/10
 date: 2021-02-18
+subtitle: "People in the worst situations can still find meaning in their lives"
 ---
 
 ### The Book in 3 Sentences

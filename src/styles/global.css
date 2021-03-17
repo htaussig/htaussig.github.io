@@ -1,4 +1,8 @@
-
+:root {
+  --links: #2D9CDB;
+  --grey: #444;
+  --title: #0081c7;
+}
 
 body{
     max-width:40em;
@@ -13,12 +17,12 @@ body{
  
 
 a:link {
-  color:#00adb5;
+  color: var(--links);
   text-decoration: none;
 }
 
 a:visited {
-  color:#00adb5;
+  color: var(--links);
 }
 
 a:hover {
@@ -107,7 +111,7 @@ p {
 }
 
 #pageTitle {
-  color: #0081c7;
+  color: var(--title);
   text-decoration: underline;
 }
 
@@ -156,6 +160,17 @@ i.fas, i.fab {
   white-space: pre-line;
 }
 
+/* For dividers between blog posts and book posts */
+.preview {
+  background-color: "#4a4a4a";
+}
+
+code {
+  white-space: pre-wrap;
+  font-size: 0.8em;
+  color: gray;
+}
+
 /* Different rules if on Mobile device */
 @media (max-width: 500px){
 
@@ -199,6 +214,8 @@ i.fas, i.fab {
       padding: 0px 20px 0px 20px;
       color:#4EC5F1;
     }
+
+
 }
 /* Different rules if on Mobile device */
 

@@ -1,6 +1,7 @@
 ---
 title: "Only Meditating for 10 days"
 date: "2021-01-25"
+subtitle: "Meditating for 12 hours a day is hard but kinda cool"
 ---
 
 If you're feeling unproductive during coronavirus, this option is always available to you: lock yourself in your room for ten days, eat nothing but brown rice and black beans and meditate all day. 

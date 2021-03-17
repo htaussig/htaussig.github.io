@@ -5,11 +5,18 @@ import React from "react"
 
 import { useStaticQuery, Link, graphql } from "gatsby"
 
+
 //-------------------------------------------
 
 const white = {
 	color: "#eeeeee",
 }
+
+const gray = {
+	color: "#808080",
+    margin: "20px 0px 30px 0px",
+}
+
 
 //-------------------------------------------
 
@@ -33,9 +40,8 @@ export default function BlogPostsPreview() {
                         id
                         frontmatter {
                             title
-                            date(
-                                
-                                formatString: "DD MMMM, YYYY")
+                            subtitle
+                            date(formatString: "DD MMMM, YYYY")
                         }
                         fields {
                             slug
@@ -64,18 +70,28 @@ export default function BlogPostsPreview() {
                 {/* <p>{node.fileAbsolutePath}</p> */}
 
                 <Link to={node.fields.slug}>
-                <h3>
+                <h2>
                     <span style = {white}>
-                    {node.frontmatter.title}{" "}
-                    
-                    {/* — {node.frontmatter.date} */}
+                        {node.frontmatter.title}
                     </span>
-                </h3>
-                {/* <p>{node.excerpt}</p> */}
-                </Link>
-                <br></br>
+
+                    {/* <span style = {gray}>
+                        {" - "}{node.frontmatter.date}
+                    </span> */}
+                    
+                </h2>
 
                 
+
+                {/* <p>{node.excerpt}</p> */}
+                </Link>
+
+                
+
+                <p style = {gray}> {node.frontmatter.subtitle} </p>
+                
+                
+                {/* <hr id = "preview"></hr> */}
             </div>
             
         ))}

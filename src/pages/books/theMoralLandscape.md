@@ -4,6 +4,7 @@ author: Sam Harris
 bookCoverImage: ../../images/BookCovers/moralLandscape.jpg
 rating: 9/10
 date: 2021-01-26
+subtitle: "Much like for questions of health, there are right answers to questions of morality"
 ---
 
 ### The Book in 3 Sentences

@@ -4,6 +4,7 @@ author: Will MacAskill
 bookCoverImage: ../../images/BookCovers/DoingGoodBetterCover.jpg
 rating: 9/10
 date: 2021-01-01
+subtitle: "An intro to Effective Altruism"
 ---
 
 ### The Book in 3 Sentences

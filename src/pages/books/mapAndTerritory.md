@@ -4,6 +4,7 @@ author: Eliezer Yudkowsky
 bookCoverImage: ../../images/BookCovers/mapAndTerritory.jpg
 rating: 9.5/10
 date: 2021-02-14
+subtitle: "The ways in which we are commonly silly (dumb), and how to be less silly"
 ---
 
 ### The Book in 3 Sentences

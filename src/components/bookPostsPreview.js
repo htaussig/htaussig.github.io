@@ -11,6 +11,11 @@ const white = {
 	color: "#eeeeee",
 }
 
+const gray = {
+	color: "#808080",
+    margin: "20px 0px 30px 0px",
+}
+
 //-------------------------------------------
 
 
@@ -33,9 +38,9 @@ export default function BookPostsPreview() {
                         id
                         frontmatter {
                             title
-                            date(
-                                
-                                formatString: "DD MMMM, YYYY")
+                            author
+                            subtitle
+                            date(formatString: "DD MMMM, YYYY")
                         }
                         fields {
                             slug
@@ -64,18 +69,23 @@ export default function BookPostsPreview() {
                 {/* <p>{node.fileAbsolutePath}</p> */}
 
                 <Link to={node.fields.slug}>
-                <h3>
+                <h2>
                     <span style = {white}>
                     {node.frontmatter.title}{" "}
-                    
-                    {/* — {node.frontmatter.date} */}
                     </span>
-                </h3>
+
+                    <span style = {gray}>
+                    — {node.frontmatter.author}
+                    </span>
+                    
+                </h2>
                 {/* <p>{node.excerpt}</p> */}
                 </Link>
-                <br></br>
-
                 
+
+                <p style = {gray}> {node.frontmatter.subtitle} </p>
+
+       
             </div>
             
         ))}

@@ -4,6 +4,7 @@ author: Kevin Simler and Robin Hanson
 bookCoverImage: ../../images/BookCovers/elephantBrain.jpg
 rating: 7.4/10
 date: 2021-02-04
+subtitle: "You don't actually know why you do what you do"
 ---
 
 It's like sapiens and freakonomics together but not as good. But still pretty interesting.

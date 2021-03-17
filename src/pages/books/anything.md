@@ -4,6 +4,7 @@ author: Derek Sivers
 bookCoverImage: ../../images/BookCovers/anything.jpg
 rating: 9.3/10
 date: 2021-02-11
+subtitle: "Derek Sivers is a really cool person"
 ---
 
 ### The Book in 3 Sentences
