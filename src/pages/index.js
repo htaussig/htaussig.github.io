@@ -2,9 +2,10 @@ import * as React from "react"
 
 import "/src/styles/global.css"
 import Head from "/src/components/head"
-import Header from "/src/components/header"
+// import Header from "/src/components/header"
 import IconLinks from "/src/components/iconLinks"
 
+import { graphql } from "gatsby"
 
 
 var myFaceImg = require('/src/images/Taussig.png')
@@ -25,13 +26,27 @@ const body = {
   
 // ----------------------------------------------------------------------------------------------------------
  
-export default function Home() {
+export default function Home({ data }) {
+
   return (
     
     <div>
 
 		<Head title="Home" />
-		<Header />
+		
+		
+		{/* Hardcoded header here for secret */}
+		<div>
+        <h1><a  id="pageTitle" href="/secret">{data.site.siteMetadata.title}</a></h1>
+        <nav id="navbar">		
+            <a id="navbarlink" href="/">Home</a>
+
+            <a id="navbarlink" href="/books/">Bookshelf</a>
+
+            <a id="navbarlink" href="/blog/">Writing</a>	
+        </nav>
+        <hr></hr>
+    	</div>
 
 		{/* <img class="large-img" style="float: right;" src="/assets/images/Taussig.png" alt="A really cute picture of Harry with some nice glistening water in the background, just imagine the sound of rushing water pass by as his teeth shine"/> */}
 
@@ -52,7 +67,7 @@ export default function Home() {
 			<div>
 				<h3 id="meIn10Min">Me in 10 minutes</h3>
 
-				<p>My work in <a href="https://twitter.com/harry_taussig" target="_blank">creative coding</a> and a
+				<p>What I'm doing right <a href = "/now">now</a>, my work in <a href="https://twitter.com/harry_taussig" target="_blank">creative coding</a> and a
 				<a href="https://fir-test-dfe3a.firebaseapp.com/" target="_blank"> 3D version of classic Snake</a> that I made in Processing.</p>
 			</div>
 
@@ -75,12 +90,12 @@ export default function Home() {
 
 
 
-// export const query = graphql`
-//   query {
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-//   }
-// `
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`

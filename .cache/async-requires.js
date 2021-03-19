@@ -10,6 +10,11 @@ exports.components = {
   "component---src-pages-cool-example-js": () => import("./../../../src/pages/coolExample.js" /* webpackChunkName: "component---src-pages-cool-example-js" */),
   "component---src-pages-index-js": () => import("./../../../src/pages/index.js" /* webpackChunkName: "component---src-pages-index-js" */),
   "component---src-pages-my-files-js": () => import("./../../../src/pages/my-files.js" /* webpackChunkName: "component---src-pages-my-files-js" */),
+  "component---src-pages-now-index-js": () => import("./../../../src/pages/now/index.js" /* webpackChunkName: "component---src-pages-now-index-js" */),
+  "component---src-pages-secret-index-js": () => import("./../../../src/pages/secret/index.js" /* webpackChunkName: "component---src-pages-secret-index-js" */),
+  "component---src-pages-secret-secret-2-index-js": () => import("./../../../src/pages/secret/secret2/index.js" /* webpackChunkName: "component---src-pages-secret-secret-2-index-js" */),
+  "component---src-pages-secret-secret-2-not-actually-the-real-secret-index-js": () => import("./../../../src/pages/secret/secret2/NotActuallyTheRealSecret/index.js" /* webpackChunkName: "component---src-pages-secret-secret-2-not-actually-the-real-secret-index-js" */),
+  "component---src-pages-secret-secret-2-not-actually-the-real-secret-tarry-haussig-index-js": () => import("./../../../src/pages/secret/secret2/NotActuallyTheRealSecret/TarryHaussig/index.js" /* webpackChunkName: "component---src-pages-secret-secret-2-not-actually-the-real-secret-tarry-haussig-index-js" */),
   "component---src-templates-blog-post-js": () => import("./../../../src/templates/blogPost.js" /* webpackChunkName: "component---src-templates-blog-post-js" */),
   "component---src-templates-book-post-js": () => import("./../../../src/templates/bookPost.js" /* webpackChunkName: "component---src-templates-book-post-js" */)
 }
