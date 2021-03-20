@@ -8,7 +8,7 @@ import IconLinks from "/src/components/iconLinks"
 import { graphql } from "gatsby"
 
 
-var myFaceImg = require('/src/images/Taussig.png')
+var myFaceImg = require('/src/images/harry.jpg')
 
 // ------------------------------------------------------------------------------------------------------------------
 
@@ -37,13 +37,13 @@ export default function Home({ data }) {
 		
 		{/* Hardcoded header here for secret */}
 		<div>
-        <h1><a  id="pageTitle" href="/secret">Tarry Haussig</a></h1>
+        <h1><a  id="pageTitle" href="/">Tarry Haussig</a></h1>
         <nav id="navbar">		
             <a id="navbarlink" href="/">Home</a>
 
             <a id="navbarlink" href="/books/">Bookshelf</a>
 
-            <a id="navbarlink" href="/blog/">Writing</a>	
+            <a id="navbarlink" href="./blog/">Writing</a>	
         </nav>
         <hr></hr>
     	</div>
@@ -54,11 +54,10 @@ export default function Home({ data }) {
 
 		<div id="bookDiv">
 			<div>
-				<h3>Me In 10 Seconds</h3>
+				<h3>10 Seconds</h3>
 
 				<main>
-					<p>I am a Junior CS Major at Haverford College minoring in Chinese, now getting more involved with Software Engineering and <a href="https://www.effectivealtruism.org/" target="_blank">Effective Altruism</a>.
-					Trying my best to learn, to connect, and to help others.
+					<p>1, 2, 3, 4, 5, 6, 7, 8, 9, 10.
 					</p>
 				</main>
 			</div>
@@ -67,14 +66,17 @@ export default function Home({ data }) {
 			<div>
 				<h3 id="meIn10Min">Me in 10 minutes</h3>
 
-				<p>What I'm doing right <a href = "/now">now</a>, my work in <a href="https://twitter.com/harry_taussig" target="_blank">creative coding</a> and a
-				<a href="https://fir-test-dfe3a.firebaseapp.com/" target="_blank"> 3D version of classic Snake</a> that I made in Processing.</p>
+				<p>
+                    真的吗？为什么你翻译我的句子。总得你不可以懂我本来的意思。要是你真正想了解我，十分钟不够。你得会说中文要是你想了解我。开始学吧。
+                </p>
 			</div>
 
 
 			<div id="contactMeDiv">
 				<h3 id="contactMe">Contact Me</h3>
-				<p>Email me at htaussig@gmail.com, or <a href="./contactMe" target="_blank">set up a meeting</a>!</p>
+				<p>I will be at <a href="https://www.google.com/maps/place/33%C2%B014'50.3%22N+53%C2%B021'50.3%22W/@33.247308,-53.3661587,17z/data=!3m1!4b1!4m9!1m2!2m1!1swakanda!3m5!1s0x0:0x0!7e2!8m2!3d33.2473084!4d-53.3639703" target="_blank">
+					this location</a> at 5:00 PM tomorrow if you'd like to meet up!
+				</p>
 			</div>
 		</div>
 

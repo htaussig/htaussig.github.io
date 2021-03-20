@@ -17,6 +17,8 @@ exports.components = {
   "component---src-pages-secret-index-js": hot(preferDefault(require("/Users/harrytaussig/Documents/mySite/htaussig.github.io/src/pages/secret/index.js"))),
   "component---src-pages-secret-secret-2-index-js": hot(preferDefault(require("/Users/harrytaussig/Documents/mySite/htaussig.github.io/src/pages/secret/secret2/index.js"))),
   "component---src-pages-secret-secret-2-not-actually-the-real-secret-index-js": hot(preferDefault(require("/Users/harrytaussig/Documents/mySite/htaussig.github.io/src/pages/secret/secret2/NotActuallyTheRealSecret/index.js"))),
+  "component---src-pages-secret-secret-2-not-actually-the-real-secret-tarry-haussig-blog-index-js": hot(preferDefault(require("/Users/harrytaussig/Documents/mySite/htaussig.github.io/src/pages/secret/secret2/NotActuallyTheRealSecret/TarryHaussig/blog/index.js"))),
+  "component---src-pages-secret-secret-2-not-actually-the-real-secret-tarry-haussig-books-index-js": hot(preferDefault(require("/Users/harrytaussig/Documents/mySite/htaussig.github.io/src/pages/secret/secret2/NotActuallyTheRealSecret/TarryHaussig/books/index.js"))),
   "component---src-pages-secret-secret-2-not-actually-the-real-secret-tarry-haussig-index-js": hot(preferDefault(require("/Users/harrytaussig/Documents/mySite/htaussig.github.io/src/pages/secret/secret2/NotActuallyTheRealSecret/TarryHaussig/index.js"))),
   "component---src-templates-blog-post-js": hot(preferDefault(require("/Users/harrytaussig/Documents/mySite/htaussig.github.io/src/templates/blogPost.js"))),
   "component---src-templates-book-post-js": hot(preferDefault(require("/Users/harrytaussig/Documents/mySite/htaussig.github.io/src/templates/bookPost.js")))
