@@ -1,8 +1,8 @@
 import * as React from "react"
 
 import "/src/styles/global.css"
-import Head from "/src/components/head"
-import Header from "/src/components/header"
+import EvilHead from "/src/components/evilHead"
+import EvilHeader from "/src/components/evilHeader"
 import IconLinks from "/src/components/iconLinks"
 import BookPostsPreview from "/src/components/bookPostsPreview"
 
@@ -12,13 +12,14 @@ export default function Home() {
 	  
 	  <div>
   
-		  <Head title="Evil Bookshelf" />
-		  <Header />
+  		<EvilHead title="Evil Bookshelf" />
+		<EvilHeader />
+
 
 
 			<div id="bookDiv">
 				<div style={{color: "gray"}}>
-					<h2><u>Books Notes</u></h2>
+					<h2><u>Evil Book Notes</u></h2>
 
 					<p>Takeaways from the books I read (Starting from 2021) 
 						<br></br>

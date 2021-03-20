@@ -18,7 +18,7 @@ export default function Home() {
 
 			<div id="bookDiv">
 				<div style={{color: "gray"}}>
-					<h2><u>Books Notes</u></h2>
+					<h2><u>Book Notes</u></h2>
 
 					<p>Takeaways from the books I read (Starting from 2021) 
 						<br></br>

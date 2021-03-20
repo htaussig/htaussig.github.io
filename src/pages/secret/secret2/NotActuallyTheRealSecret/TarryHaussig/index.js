@@ -1,8 +1,8 @@
 import * as React from "react"
 
 import "/src/styles/global.css"
-import Head from "/src/components/head"
-// import Header from "/src/components/header"
+import EvilHead from "/src/components/evilHead"
+import EvilHeader from "/src/components/evilHeader"
 import IconLinks from "/src/components/iconLinks"
 
 import { graphql } from "gatsby"
@@ -32,21 +32,11 @@ export default function Home({ data }) {
     
     <div>
 
-		<Head title="Home" />
+		<EvilHead title="Home" />
 		
 		
 		{/* Hardcoded header here for secret */}
-		<div>
-        <h1><a  id="pageTitle" href="/">Tarry Haussig</a></h1>
-        <nav id="navbar">		
-            <a id="navbarlink" href="/">Home</a>
-
-            <a id="navbarlink" href="/books/">Bookshelf</a>
-
-            <a id="navbarlink" href="./blog/">Writing</a>	
-        </nav>
-        <hr></hr>
-    	</div>
+		<EvilHeader />
 
 		{/* <img class="large-img" style="float: right;" src="/assets/images/Taussig.png" alt="A really cute picture of Harry with some nice glistening water in the background, just imagine the sound of rushing water pass by as his teeth shine"/> */}
 
