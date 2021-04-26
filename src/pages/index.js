@@ -1,12 +1,14 @@
 import * as React from "react"
 
-import "/src/styles/global.css"
+// import "/src/styles/global.css"
 import Head from "/src/components/head"
 // import Header from "/src/components/header"
 import IconLinks from "/src/components/iconLinks"
 
 import { graphql } from "gatsby"
 
+import { Helmet } from "react-helmet"
+import SubscribeForm from "../components/subscribeForm"
 
 var myFaceImg = require('/src/images/Taussig.png')
 
@@ -37,11 +39,11 @@ export default function Home({ data }) {
 		
 		{/* Hardcoded header here for secret */}
 		<div>
-        <h1><a  id="pageTitle" href="/secret">{data.site.siteMetadata.title}</a></h1>
+        <h1><a  id="pageTitle" href="/secret/">{data.site.siteMetadata.title}</a></h1>
         <nav id="navbar">		
-            <a id="navbarlink" href="/">Home</a>
+            <a id="navbarlink" href="http://notes.harrytaussig.com">Garden</a>
 
-            <a id="navbarlink" href="/books/">Bookshelf</a>
+            <a id="navbarlink" href="/generative/">Art</a>
 
             <a id="navbarlink" href="/blog/">Writing</a>	
         </nav>
@@ -67,19 +69,38 @@ export default function Home({ data }) {
 			<div>
 				<h3 id="meIn10Min">Me in 10 minutes</h3>
 
-				<p>What I'm doing right <a href = "/now">now</a>, my work in <a href="https://twitter.com/harry_taussig" target="_blank">creative coding</a> and a
+				<p>What I'm doing right <a href = "/now/">now</a>, my work in <a href="/generative/" target="_blank">creative coding</a> and a
 				<a href="https://fir-test-dfe3a.firebaseapp.com/" target="_blank"> 3D version of classic Snake</a> that I made in Processing.</p>
 			</div>
 
 
 			<div id="contactMeDiv">
 				<h3 id="contactMe">Contact Me</h3>
-				<p>Email me at htaussig@gmail.com, or <a href="./contactMe" target="_blank">set up a meeting</a>!</p>
+				<p>Email me at htaussig@gmail.com, or <a href="./contactMe">set up a meeting</a>!</p>
 			</div>
 		</div>
 
+		<script
+			dangerouslySetInnerHTML={{
+				__html: `
+				!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8a3b9500239292a2a947aaad8/40a34962fd1b1c871c83612d9.js");
+				`,
+			}}
+		/>
+
+		{/* <SubscribeForm></SubscribeForm>
+
+		<Helmet>
+			<script type='text/javascript'>
+				{`
+				!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8a3b9500239292a2a947aaad8/40a34962fd1b1c871c83612d9.js");
+				`}
+			</script>
+		</Helmet> */}
+
 		<IconLinks />
 
+	
 
 	</div>
 

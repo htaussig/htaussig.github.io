@@ -36,7 +36,7 @@ export default function Home() {
 		<Head title="what were you thinking" />
 		
 		<div>
-			<h1><a  id="pageTitle" href="./NotActuallyTheRealSecret/TarryHaussig/">Tarry Haussig</a></h1>
+			<h1><a  id="pageTitle" href="/secret/secret2/NotActuallyTheRealSecret/TarryHaussig">Tarry Haussig</a></h1>
 			<nav id="navbar">		
 				<a id="navbarlink" href="/">Home</a>
 

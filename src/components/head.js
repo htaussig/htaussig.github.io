@@ -1,6 +1,8 @@
 import React from "react"
-
 import { useStaticQuery, Link, graphql } from "gatsby"
+import { Helmet } from "react-helmet"
+
+var favicon = require('/src/images/favicon.png')
 
 export default function Head(props) {
 
@@ -17,13 +19,13 @@ export default function Head(props) {
   )
 
   return (
-    
       
-      <head>
-        
-        <title>{props.title} | {data.site.siteMetadata.title}</title>
+    <Helmet>
+      {/* <meta charSet="utf-8" /> */}
+      <link rel="shortcut icon" href={favicon} />
+      <title>{props.title} | {data.site.siteMetadata.title}</title>
       
-      </head>
+    </Helmet>
       
   );
 }

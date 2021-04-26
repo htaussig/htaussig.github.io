@@ -38,8 +38,6 @@ export default function Home({ data }) {
 		{/* Hardcoded header here for secret */}
 		<EvilHeader />
 
-		{/* <img class="large-img" style="float: right;" src="/assets/images/Taussig.png" alt="A really cute picture of Harry with some nice glistening water in the background, just imagine the sound of rushing water pass by as his teeth shine"/> */}
-
 		<img class="large-img" style={{float: "right",}} src={myFaceImg} alt="A really cute picture of Harry with some nice glistening water in the background, just imagine the sound of rushing water pass by as his teeth shine"/>
 
 		<div id="bookDiv">
