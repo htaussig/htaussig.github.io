@@ -34,9 +34,10 @@ export default function BlogPost({ data }) {
               {/* <!-- Write here --> */}
 
           
-          <BlogFooter />
+          
           
         </div>
+        <BlogFooter />
       </div>
 
   )

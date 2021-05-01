@@ -7,8 +7,9 @@ import IconLinks from "/src/components/iconLinks"
 
 import { graphql } from "gatsby"
 
-import { Helmet } from "react-helmet"
-import SubscribeForm from "../components/subscribeForm"
+//import { Helmet } from "react-helmet"
+
+// import MailChimpForm from "../components/MailChimpForm"
 
 var myFaceImg = require('/src/images/Taussig.png')
 
@@ -88,23 +89,21 @@ export default function Home({ data }) {
 			}}
 		/>
 
-		{/* <SubscribeForm></SubscribeForm>
-
-		<Helmet>
-			<script type='text/javascript'>
-				{`
-				!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8a3b9500239292a2a947aaad8/40a34962fd1b1c871c83612d9.js");
-				`}
-			</script>
-		</Helmet> */}
-
 		<IconLinks />
 
+		{/* <br></br>
+		<br></br>
+		<br></br>
+		<MailChimpForm></MailChimpForm> */}
+
 	
+		
+
 
 	</div>
 
     // </div>
+	// https://harrytaussig.us7.list-manage.com/subscribe/post?u=8a3b9500239292a2a947aaad8&amp;id=be50be427f
 
   );
 }

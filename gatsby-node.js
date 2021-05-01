@@ -36,7 +36,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   //Books!
   const result2 = await graphql(`
-    query {
+    query { 
       allMarkdownRemark(
         filter: {fileAbsolutePath: {regex: "/.*(\/pages\/books)/.*.md$/"}}
         ) {

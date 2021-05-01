@@ -1,7 +1,7 @@
 ---
 title: "The Paradox of Progress"
 date: "2021-05-01"
-subtitle: "Why strive when it is exactly what makes us suffer?"
+subtitle: "Why strive when it makes us suffer?"
 ---
 
 ### Why strive when it is exactly what makes us suffer?
@@ -31,13 +31,12 @@ At first it seems that striving for others may be detrimental to your own well-b
 It's worth the effort to genuinely improve your own and others' lives, but almost all other striving leads to endless cycles dissatisfaction. Improving your own well-being calls for non-striving on nearly all other fronts, but It's lucky that we find helping others so meaningful, and I think part of the reason for this is that it naturally makes us take on the following mindset. 
 
 ### Living each moment for itself in the context of greater progress
-	A balance of striving and non-striving on two different time scales
 
 Although striving and satisfaction seem to be contradictory, you can live each moment entirely for itself while still choosing a series of actions that lead you towards achieving your goals. 
 
 Any journey towards a goal is made up of only tiny steps, but there does not need to be striving or dissatisfaction in each moment of execution to reach towards goals. We should strive and hope when creating plans, but not when following them through.
 
-Yoga or meditation is a good analogy here. Someone who meditates or does yoga is trying to get better at it or make use of it outside of their practice. Across weeks and months they hope to improve, but in any single practice session they work with their mind or body exactly as it is. It's the difference between "damn it, I messed up" and "damn it -- oh wait, I was expecting to mess up anyway, and this is also a chance to improve." An aspect of the practice is fully accepting whatever point in your progress you happen to be at each day. You close the distance between where you are and where you wish you were, while still putting in your full effort.
+Yoga or meditation is a good analogy here. Someone who meditates or does yoga is trying to get better at it or make use of it outside of their practice. Across weeks and months they hope to improve, but in any single practice session they work with their mind or body exactly as it is. It's the difference between "damn it, I messed up" and "damn it—oh wait, I was expecting to mess up anyway, and this is also a chance to improve." An aspect of the practice is fully accepting whatever point in your progress you happen to be at each day. You close the distance between where you are and where you wish you were, while still putting in your full effort.
 
 This is not only a useful mindset emotionally, but also for progress. It's both more enjoyable and effective to accept where you are on your path towards your goals—understanding and working with where you are rather than wishing you were already at a later stage. Further, these achievements or skills would be worthless if you didn't have to work for them. There would be no satisfaction in learning a language if you could download it to your brain, or in running a marathon if it was as easy as driving one.
 

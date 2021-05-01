@@ -1,6 +1,12 @@
 var plugins = [{
+      plugin: require('/Users/harrytaussig/Documents/mySite/htaussig.github.io/node_modules/gatsby-plugin-material-ui/gatsby-ssr'),
+      options: {"plugins":[]},
+    },{
       plugin: require('/Users/harrytaussig/Documents/mySite/htaussig.github.io/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
+    },{
+      plugin: require('/Users/harrytaussig/Documents/mySite/htaussig.github.io/node_modules/gatsby-plugin-feed/gatsby-ssr'),
+      options: {"plugins":[],"query":"\n            {\n              site {\n                siteMetadata {\n                  title\n                  description\n                  siteUrl\n                  site_url: siteUrl\n                }\n              }\n            }\n          ","feeds":[{"query":"\n                {\n                  allMarkdownRemark(\n                    sort: { order: DESC, fields: [frontmatter___date] },\n                  ) {\n                    edges {\n                      node {\n                        excerpt\n                        html\n                        fields { slug }\n                        frontmatter {\n                          title\n                          date\n                        }\n                      }\n                    }\n                  }\n                }\n              ","output":"/rss.xml","title":"Your Site's RSS Feed","match":"^/blog/"}]},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [
