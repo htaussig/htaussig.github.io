@@ -28,7 +28,7 @@ html, body {
     margin: 0;
     padding: 0;
     justify-content: center; /* Center horizontally */
-    font-family: 'Vulf Mono Light Italic', sans-serif;
+    font-family: 'Vulf Mono Light Italic'f;
     text-align: center; /* Center text elements horizontally */
     font-size: 12px;
 
@@ -104,7 +104,7 @@ body.dark-mode {
 /* DARK MODE TINGS */
 
 .bold-italic {
-    font-family: 'Vulf Mono Bold Italic', sans-serif;
+    font-family: 'Vulf Mono Bold Italic';
     font-weight: bold; /* Only necessary if the browser doesn't automatically infer the weight from the font */
     font-style: italic;
 }
@@ -123,7 +123,7 @@ a:visited {
     /* position: absolute; or fixed, depending on what you need */
     white-space: pre; /* to maintain spacing and line breaks in ASCII art */
     /*font-family: 'monospace';/*  Typically ASCII art looks best in monospace */
-    /* font-family: 'Vulf Mono Light Italic', sans-serif; */
+    /* font-family: 'Vulf Mono Light Italic', */
     color: white;
     font-size: 8px;
     line-height: 12px; 
