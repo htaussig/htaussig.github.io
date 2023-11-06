@@ -1,13 +1,4 @@
 @font-face {
-    font-family: 'Vulf Mono Light Italic';
-    src: url('font/Vulf_Mono-Light_Italic_web.woff2') format('woff2'),
-         url('font/Vulf_Mono-Light_Italic_web.woff') format('woff'),
-         url('font/Vulf_Mono-Light_Italic_web.ttf') format('truetype');
-    /* font-weight: normal; */
-    font-style: italic;
-}
-
-@font-face {
     font-family: 'Vulf Mono Bold Italic';
     src: url('font/Vulf_Mono-Bold_Italic_web.woff2') format('woff2'),
          url('font/Vulf_Mono-Bold_Italic_web.woff') format('woff'),
@@ -15,6 +6,16 @@
     font-weight: bold;
     font-style: italic;
 }
+
+@font-face {
+    font-family: 'Light Italic';
+    src: url('font/Light_Italic.woff2') format('woff2'),
+         url('font/Light_Italic.woff') format('woff'),
+         url('font/Light_Italic.ttf') format('truetype');
+    font-weight: light;
+    font-style: italic;
+}
+
 
 
 :root {
@@ -35,18 +36,18 @@ html, body {
 }
 
 p {
-    font-family: 'Vulf Mono Light Italic';
+    font-family: 'Light Italic';
 }
 
 .light-italic {
-    font-family: 'Vulf Mono Light Italic';
+    font-family: 'Light Italic';
 }
 
 .content {
     width: 100%; /* Adjust width as needed */
       /* The font-size in the image */
     font-size: 12px;
-    font-family: 'Vulf Mono Light Italic'; /* TESTING HERE */
+    font-family: 'ight Italic'; /* TESTING HERE */
     /* font-weight: bold; */
 
     /* The line-height in the image */
