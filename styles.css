@@ -28,7 +28,7 @@ html, body {
     margin: 0;
     padding: 0;
     justify-content: center; /* Center horizontally */
-    font-family: 'Vulf Mono Light Italic';
+    font-family: 'Vulf Mono Bold Italic'; /* TESTING HERE */
     text-align: center; /* Center text elements horizontally */
     font-size: 12px;
 
@@ -38,7 +38,7 @@ html, body {
     width: 100%; /* Adjust width as needed */
       /* The font-size in the image */
     font-size: 12px;
-    font-family: 'Vulf Mono Light Italic';
+    font-family: 'Vulf Mono Bold Italic'; /* TESTING HERE */
     /* font-weight: bold; */
 
     /* The line-height in the image */
