@@ -3,7 +3,7 @@
     src: url('fonts/Vulf_Mono-Light_Italic_web.woff2') format('woff2'),
          url('fonts/Vulf_Mono-Light_Italic_web.woff') format('woff'),
          url('fonts/Vulf_Mono-Light_Italic_web.ttf') format('truetype');
-    font-weight: normal;
+    /* font-weight: normal; */
     font-style: italic;
 }
 
@@ -28,7 +28,7 @@ html, body {
     margin: 0;
     padding: 0;
     justify-content: center; /* Center horizontally */
-    font-family: 'Vulf Mono Light Italic'f;
+    font-family: 'Vulf Mono Light Italic';
     text-align: center; /* Center text elements horizontally */
     font-size: 12px;
 
@@ -38,6 +38,7 @@ html, body {
     width: 100%; /* Adjust width as needed */
       /* The font-size in the image */
     font-size: 12px;
+    font-family: 'Vulf Mono Light Italic';
     /* font-weight: bold; */
 
     /* The line-height in the image */
