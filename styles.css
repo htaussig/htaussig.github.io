@@ -1,17 +1,17 @@
 @font-face {
     font-family: 'Vulf Mono Light Italic';
-    src: url('fonts/Vulf_Mono-Light_Italic_web.woff2') format('woff2'),
-         url('fonts/Vulf_Mono-Light_Italic_web.woff') format('woff'),
-         url('fonts/Vulf_Mono-Light_Italic_web.ttf') format('truetype');
+    src: url('font/Vulf_Mono-Light_Italic_web.woff2') format('woff2'),
+         url('font/Vulf_Mono-Light_Italic_web.woff') format('woff'),
+         url('font/Vulf_Mono-Light_Italic_web.ttf') format('truetype');
     /* font-weight: normal; */
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Vulf Mono Bold Italic';
-    src: url('fonts/Vulf_Mono-Bold_Italic_web.woff2') format('woff2'),
-         url('fonts/Vulf_Mono-Bold_Italic_web.woff') format('woff'),
-         url('fonts/Vulf_Mono-Bold_Italic_web.ttf') format('truetype');
+    src: url('font/Vulf_Mono-Bold_Italic_web.woff2') format('woff2'),
+         url('font/Vulf_Mono-Bold_Italic_web.woff') format('woff'),
+         url('font/Vulf_Mono-Bold_Italic_web.ttf') format('truetype');
     font-weight: bold;
     font-style: italic;
 }
@@ -28,17 +28,25 @@ html, body {
     margin: 0;
     padding: 0;
     justify-content: center; /* Center horizontally */
-    font-family: 'Vulf Mono Bold Italic'; /* TESTING HERE */
+    /* font-family: 'Vulf Mono Bold Italic'; TESTING HERE */
     text-align: center; /* Center text elements horizontally */
     font-size: 12px;
 
+}
+
+p {
+    font-family: 'Vulf Mono Light Italic';
+}
+
+.light-italic {
+    font-family: 'Vulf Mono Light Italic';
 }
 
 .content {
     width: 100%; /* Adjust width as needed */
       /* The font-size in the image */
     font-size: 12px;
-    font-family: 'Vulf Mono Bold Italic'; /* TESTING HERE */
+    font-family: 'Vulf Mono Light Italic'; /* TESTING HERE */
     /* font-weight: bold; */
 
     /* The line-height in the image */
