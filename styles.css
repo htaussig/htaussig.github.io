@@ -140,52 +140,52 @@ a:visited {
     white-space: pre; /* to maintain spacing and line breaks in ASCII art */
     /*font-family: 'monospace';/*  Typically ASCII art looks best in monospace */
     /* font-family: 'Vulf Mono Light Italic', */
-    font-family: 'Light Italic';
-    color: black;
+    font-family: 'Light Italic', 'monospace';
+    color: white;
     font-size: 8px;
     line-height: 12px; 
 
-    max-width: calc(100% - 100px);
+    /* max-width: calc(100% - 10vw); */
     overflow: hidden; /* This will hide any part that goes off-screen */
 
 
 }
 
  /* Upper-left element */
- #ascii-top-left {
+ /* #ascii-top-left {
     position: absolute;
     left: 50%; /* Start from the center */
-    transform: translateX(calc((-340 / 1150) * 100vw)); /* Move to the right from the center */
-    top: 25vw; /* Adjust if you want to change the vertical position */
+    /* transform: translateX(calc((-340 / 1150) * 100vw)); Move to the right from the center */
+    /* top: 25vw; Adjust if you want to change the vertical position */
 
-  }
+  /* } */
 
   /* Upper-right element */
-  #ascii-top-right {
+  /* #ascii-top-right {
     position: absolute;
     left: 50%; /* Start from the center */
-    transform: translateX(calc((140 / 1150) * 100vw)); /* Move to the right from the center */
-    top: 7vw; /* Adjust if you want to change the vertical position */
-    font-family: 'Light Italic';
+    /* transform: translateX(calc((140 / 1150) * 100vw)); /* Move to the right from the center */
+    /* top: 7vw; /* Adjust if you want to change the vertical position */
+    /* font-family: 'Light Italic'; */ */
 
-  }
+  /* } */ */ */
 
   #ascii-middle {
     text-align: center;
     position: relative; /* relative to its normal position */
-    left: calc((44 / 1150) * 100vw); /* adjust the value to push it to the left */
+    left: 50%; 
   }
 
   /* Bottom-left element */
-  #ascii-bottom-left {
+  /* #ascii-bottom-left {
     position: absolute;
     left: 50%; /* Start by centering the element */
-    transform: translateX(calc(-50% - 35.7vw)) translateY(-3vw); /* Then shift it 100px to the left from the center */
-  }
+    /* transform: translateX(calc(-50% - 35.7vw)) translateY(-3vw); Then shift it 100px to the left from the center */
+  /* }  */
 
   /* Bottom-right element */
-  #ascii-bottom-right {
+  /* #ascii-bottom-right {
     position: absolute;
     left: 50%; /* Start by centering the element */
-    transform: translateX(calc(-50% + 26vw)) translateY(-6vw); /* Then shift it 100px to the left from the center */
-  }
+    /* transform: translateX(calc(-50% + 26vw)) translateY(-6vw); Then shift it 100px to the left from the center */
+  /* } */
