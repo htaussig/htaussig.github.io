@@ -249,11 +249,12 @@ h2 {
 
 /* DARK MODE TINGS */
 .video-container {
-    display: flex; /* Use flexbox to center the video */
+    /* display: flex; Use flexbox to center the video */
     justify-content: center; /* Center video horizontally */
-    padding: 0 1.25rem; /* 20 padding on the left and right */
+    padding: 0 8rem; /* 20 padding on the left and right */
     box-sizing: border-box; /* Include padding in the element's total width */
     align-items: center; /* Center vertically */
+    font-size: .51em;
 
 }
   
