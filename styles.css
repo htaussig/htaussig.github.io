@@ -109,7 +109,7 @@ html, body {
     /* font-family: 'Vulf Mono Bold Italic'; TESTING HERE */
     /* font-family: 'bold italic', 'light italic', sans-serif; */
     text-align: center; /* Center text elements horizontally */
-    font-size: .75em;
+    font-size: 21.33px;
 
     overflow-x: hidden;
 
@@ -120,8 +120,8 @@ h1, h2, h3 {
 }
 
 h2 {
-    font-size: 1.6em;
-    margin-bottom: 0em;
+    font-size: 1.6rem;
+    margin-bottom: 0rem;
 }
 
 /* p {
@@ -139,12 +139,12 @@ h2 {
 .content {
     width: 100%; /* Adjust width as needed */
       /* The font-size in the image */
-    font-size: .75em;
+    font-size: .75rem;
     font-family: 'italic'; /* TESTING HERE */
     /* font-weight: bold; */
 
     /* The line-height in the image */
-    line-height: 1em; /* Might also be 1.4 if the value is a multiple of the font size */
+    line-height: 1rem; /* Might also be 1.4 if the value is a multiple of the font size */
 
     /* Text-align in the image */
     text-align: center;
@@ -155,8 +155,8 @@ h2 {
     /* The image shows auto margins which center the block-level element */
     margin-left: auto;
     margin-right: auto;
-    margin-top: 1.25em;
-    margin-bottom: 1.25em;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
 
     /* If you need to specify the color and background, assuming they are as default */
     /* background-color: white; */
@@ -173,15 +173,15 @@ h2 {
 }
 
 .central-column {
-    /* width: 100%; Adjust width as needed */
+    width: 100%; /* Adjust width as needed */
       /* The font-size in the image */
-    font-size: 0.8em;
+    font-size: 0.8rem;
     /* font-family: 'regular'; TESTING HERE */
     /* font-weight: bold; */
     font-family: 'regular', 'arial';
 
     /* The line-height in the image */
-    line-height: 1em; 
+    line-height: 1rem; 
     /* Might also be 1.4 if the value is a multiple of the font size */
 
     /* Text-align in the image */
@@ -197,17 +197,19 @@ h2 {
     margin-bottom: 20; */
 
 
-    max-width: 36em; /* Adjust the width as needed */
+    /* max-width: 36rem; Adjust the width as needed */
     /* margin: 20; */
     /* display: flex; */
-    width: 36em; /* Set the width of the column */
+    width: 36rem; /* Set the width of the column */
     margin: 0 auto; /* Center the column */
     text-align: left; /* Justify the text */
 
     /* If you need to specify the color and background, assuming they are as default */
     /* background-color: white; */
 
-    display: block; /* Ensures that .content is a block-level element */
+    display: flex; /* Ensures that .content is a block-level element */
+    flex-direction: row; /* Optional since 'row' is the default value */
+    gap: 2rem;
     /* clear: both;    Ensures that no floating elements are to the left or right */
 
     /* DARK MODE TINGS */
@@ -218,8 +220,30 @@ h2 {
 
 }
 
+.central-column-block {
+    width: 100%; /* Adjust width as needed */
+      /* The font-size in the image */
+    font-size: 0.8rem;
+    /* font-family: 'regular'; TESTING HERE */
+    /* font-weight: bold; */
+    font-family: 'regular', 'arial';
+
+    /* The line-height in the image */
+    line-height: 1rem; 
+
+    width: 36rem; /* Set the width of the column */
+    margin: 0 auto; /* Center the column */
+    text-align: left; /* Justify the text */
+
+
+
+    display: block; /* Ensures that .content is a block-level element */
+
+
+}
+
 .testimonial {
-    padding-bottom: 1.25em;
+    padding-bottom: 1.25rem;
     font-family: 'light';
 }
 
@@ -227,7 +251,7 @@ h2 {
 .video-container {
     display: flex; /* Use flexbox to center the video */
     justify-content: center; /* Center video horizontally */
-    padding: 0 1.25em; /* 20 padding on the left and right */
+    padding: 0 1.25rem; /* 20 padding on the left and right */
     box-sizing: border-box; /* Include padding in the element's total width */
     align-items: center; /* Center vertically */
 
@@ -235,7 +259,7 @@ h2 {
   
 .video-container iframe {
 width: 100%; /* Make the iframe responsive: it will take up 100% of its parent's width */
-max-width: 35em; /* Optional: you can set a max-width if you want */
+max-width: 350rem; /* Optional: you can set a max-width if you want */
 height: auto; /* Adjust the height automatically */
 aspect-ratio: 16 / 9; /* Maintain aspect ratio (remove if not needed) */
 }
@@ -247,7 +271,7 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    padding: 1.25em;
+    padding: 1.25rem;
   }
 
 body.dark-mode {
@@ -275,7 +299,7 @@ body.dark-mode {
 
 
 .responsive-img {
-    max-width: 25em;
+    max-width: 25rem;
     width: 100%;
     height: auto;
 }
@@ -305,8 +329,8 @@ a:visited {
     /* font-family: 'Vulf Mono Light Italic', */
     font-family: 'light italic', 'monospace';
     /* color: white; */
-    font-size: .5em;
-    line-height: .75em; 
+    font-size: .5rem;
+    line-height: .75rem; 
 
     /* max-width: calc(100% - 10vw); */
     overflow: hidden; /* This will hide any part that goes off-screen */
@@ -340,7 +364,7 @@ a:visited {
   }
 
   p.indent {
-    text-indent: 2.5em; /* Adjust the value to suit your needs */
+    text-indent: 2.5rem; /* Adjust the value to suit your needs */
     font-family: 'italic'
 }
 
