@@ -1,5 +1,5 @@
 /* @font-face {
-    font-family: 'Vulf Mono Bold Italic';
+    font-family: 'Vulf Mono bold italic';
     src: url('font/Vulf_Mono-Bold_Italic_web.woff2') format('woff2'),
          url('font/Vulf_Mono-Bold_Italic_web.woff') format('woff'),
          url('font/Vulf_Mono-Bold_Italic_web.ttf') format('truetype');
@@ -106,8 +106,10 @@ html, body {
     margin: 0;
     padding: 0;
     justify-content: center; /* Center horizontally */
-    /* font-family: 'Vulf Mono Bold Italic'; TESTING HERE */
-    /* font-family: 'bold italic', 'light italic', sans-serif; */
+    /* font-family: 'Vulf Mono bold italic'; TESTING HERE */
+    font-family: 'bold italic';
+    /* font-weight: bold; Only necessary if the browser doesn't automatically infer the weight from the font */
+    font-style: italic;
     text-align: center; /* Center text elements horizontally */
     font-size: 21.33px; /* update plz */
 
@@ -140,7 +142,7 @@ h2 {
     width: 100%; /* Adjust width as needed */
       /* The font-size in the image */
     font-size: .75rem;
-    font-family: 'bold italic'; /* TESTING HERE */
+    font-family: 'italic'; /* TESTING HERE */
 
     /* The line-height in the image */
     line-height: 1rem; /* Might also be 1.4 if the value is a multiple of the font size */
