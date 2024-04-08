@@ -117,6 +117,12 @@ html, body {
 
 }
 
+pre {
+    font-family: 'italic';
+    /* font-weight: bold; Only necessary if the browser doesn't automatically infer the weight from the font */
+    font-style: italic;
+}
+
 h1, h2, h3 {
     font-family: 'bold italic'
 }
