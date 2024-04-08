@@ -109,7 +109,7 @@ html, body {
     /* font-family: 'Vulf Mono Bold Italic'; TESTING HERE */
     /* font-family: 'bold italic', 'light italic', sans-serif; */
     text-align: center; /* Center text elements horizontally */
-    font-size: 12px;
+    font-size: .75em;
 
     overflow-x: hidden;
 
@@ -120,8 +120,8 @@ h1, h2, h3 {
 }
 
 h2 {
-    font-size: 26px;
-    margin-bottom: 0px;
+    font-size: 1.6em;
+    margin-bottom: 0em;
 }
 
 /* p {
@@ -139,12 +139,12 @@ h2 {
 .content {
     width: 100%; /* Adjust width as needed */
       /* The font-size in the image */
-    font-size: 12px;
+    font-size: .75em;
     font-family: 'italic'; /* TESTING HERE */
     /* font-weight: bold; */
 
     /* The line-height in the image */
-    line-height: 16.8px; /* Might also be 1.4 if the value is a multiple of the font size */
+    line-height: 1em; /* Might also be 1.4 if the value is a multiple of the font size */
 
     /* Text-align in the image */
     text-align: center;
@@ -155,8 +155,8 @@ h2 {
     /* The image shows auto margins which center the block-level element */
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
 
     /* If you need to specify the color and background, assuming they are as default */
     /* background-color: white; */
@@ -175,13 +175,13 @@ h2 {
 .central-column {
     /* width: 100%; Adjust width as needed */
       /* The font-size in the image */
-    font-size: 13px;
+    font-size: 0.8em;
     /* font-family: 'regular'; TESTING HERE */
     /* font-weight: bold; */
     font-family: 'regular', 'arial';
 
     /* The line-height in the image */
-    line-height: 16.8px; 
+    line-height: 1em; 
     /* Might also be 1.4 if the value is a multiple of the font size */
 
     /* Text-align in the image */
@@ -193,14 +193,14 @@ h2 {
     /* The image shows auto margins which center the block-level element */
     /* margin-left: auto;
     margin-right: auto; */
-    /* margin-top: 20px;
-    margin-bottom: 20px; */
+    /* margin-top: 20;
+    margin-bottom: 20; */
 
 
-    max-width: 570px; /* Adjust the width as needed */
-    /* margin: 20px; */
+    max-width: 36em; /* Adjust the width as needed */
+    /* margin: 20; */
     /* display: flex; */
-    width: 570px; /* Set the width of the column */
+    width: 36em; /* Set the width of the column */
     margin: 0 auto; /* Center the column */
     text-align: left; /* Justify the text */
 
@@ -219,7 +219,7 @@ h2 {
 }
 
 .testimonial {
-    padding-bottom: 20px;
+    padding-bottom: 1.25em;
     font-family: 'light';
 }
 
@@ -227,7 +227,7 @@ h2 {
 .video-container {
     display: flex; /* Use flexbox to center the video */
     justify-content: center; /* Center video horizontally */
-    padding: 0 20px; /* 20px padding on the left and right */
+    padding: 0 1.25em; /* 20 padding on the left and right */
     box-sizing: border-box; /* Include padding in the element's total width */
     align-items: center; /* Center vertically */
 
@@ -235,7 +235,7 @@ h2 {
   
 .video-container iframe {
 width: 100%; /* Make the iframe responsive: it will take up 100% of its parent's width */
-max-width: 560px; /* Optional: you can set a max-width if you want */
+max-width: 35em; /* Optional: you can set a max-width if you want */
 height: auto; /* Adjust the height automatically */
 aspect-ratio: 16 / 9; /* Maintain aspect ratio (remove if not needed) */
 }
@@ -244,6 +244,11 @@ body {
     /* transition: background-color 1.3s, color 1.3s;
 } */
 
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25em;
+  }
 
 body.dark-mode {
     background-color: black;
@@ -270,7 +275,7 @@ body.dark-mode {
 
 
 .responsive-img {
-    max-width: 400px;
+    max-width: 25em;
     width: 100%;
     height: auto;
 }
@@ -300,8 +305,8 @@ a:visited {
     /* font-family: 'Vulf Mono Light Italic', */
     font-family: 'light italic', 'monospace';
     /* color: white; */
-    font-size: 8px;
-    line-height: 12px; 
+    font-size: .5em;
+    line-height: .75em; 
 
     /* max-width: calc(100% - 10vw); */
     overflow: hidden; /* This will hide any part that goes off-screen */
@@ -335,7 +340,7 @@ a:visited {
   }
 
   p.indent {
-    text-indent: 40px; /* Adjust the value to suit your needs */
+    text-indent: 2.5em; /* Adjust the value to suit your needs */
     font-family: 'italic'
 }
 
@@ -343,13 +348,13 @@ a:visited {
   /* #ascii-bottom-left {
     position: absolute;
     left: 50%; /* Start by centering the element */
-    /* transform: translateX(calc(-50% - 35.7vw)) translateY(-3vw); Then shift it 100px to the left from the center */
+    /* transform: translateX(calc(-50% - 35.7vw)) translateY(-3vw); Then shift it 100 to the left from the center */
   /* }  */
 
   /* Bottom-right element */
   /* #ascii-bottom-right {
     position: absolute;
     left: 50%; /* Start by centering the element */
-    /* transform: translateX(calc(-50% + 26vw)) translateY(-6vw); Then shift it 100px to the left from the center */
+    /* transform: translateX(calc(-50% + 26vw)) translateY(-6vw); Then shift it 100 to the left from the center */
   /* } */
 
