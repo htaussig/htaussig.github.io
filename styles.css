@@ -140,8 +140,7 @@ h2 {
     width: 100%; /* Adjust width as needed */
       /* The font-size in the image */
     font-size: .75rem;
-    font-family: 'italic'; /* TESTING HERE */
-    /* font-weight: bold; */
+    font-family: 'bold italic'; /* TESTING HERE */
 
     /* The line-height in the image */
     line-height: 1rem; /* Might also be 1.4 if the value is a multiple of the font size */
@@ -329,7 +328,7 @@ a:visited {
     white-space: pre; /* to maintain spacing and line breaks in ASCII art */
     /*font-family: 'monospace';/*  Typically ASCII art looks best in monospace */
     /* font-family: 'Vulf Mono Light Italic', */
-    font-family: 'light italic', 'monospace';
+    font-family: 'bold italic', 'monospace';
     /* color: white; */
     font-size: .5rem;
     line-height: .75rem; 
