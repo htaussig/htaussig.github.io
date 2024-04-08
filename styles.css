@@ -321,6 +321,13 @@ body.dark-mode {
     font-style: italic;
 }
 
+.home-headings {
+    font-family: 'bold italic';
+    font-weight: bold;
+    font-style: italic;
+    white-space: nowrap;
+}
+
 a {
     color: var(--link-color);;
 }
