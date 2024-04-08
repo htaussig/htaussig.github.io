@@ -173,7 +173,8 @@ h2 {
 }
 
 .central-column {
-    width: 100%; /* Adjust width as needed */
+    width: 80vw; /* Adjust width as needed */
+    max-width: 50em;
       /* The font-size in the image */
     font-size: 0.8rem;
     /* font-family: 'regular'; TESTING HERE */
@@ -200,7 +201,7 @@ h2 {
     /* max-width: 36rem; Adjust the width as needed */
     /* margin: 20; */
     /* display: flex; */
-    width: 36rem; /* Set the width of the column */
+    /* width: 36rem; Set the width of the column */
     margin: 0 auto; /* Center the column */
     text-align: left; /* Justify the text */
 
@@ -221,7 +222,8 @@ h2 {
 }
 
 .central-column-block {
-    width: 100%; /* Adjust width as needed */
+    width: 80vw; /* Adjust width as needed */
+    max-width: 40em;
       /* The font-size in the image */
     font-size: 0.8rem;
     /* font-family: 'regular'; TESTING HERE */
@@ -231,7 +233,6 @@ h2 {
     /* The line-height in the image */
     line-height: 1rem; 
 
-    width: 36rem; /* Set the width of the column */
     margin: 0 auto; /* Center the column */
     text-align: left; /* Justify the text */
 
