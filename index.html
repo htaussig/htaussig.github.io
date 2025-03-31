@@ -4,120 +4,576 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harry Taussig</title>
-    <link rel="stylesheet" href="styles.css">
-
-     <!-- Standard favicon -->
-     <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
-     <!-- Recommended favicon format -->
-     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon.png">
-
+    <style>
+        /* Global Styles */
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+        
+        :root {
+            --primary: #ff00ff;
+            --secondary: #00ffff;
+            --accent1: #ffff00;
+            --accent2: #00ff00;
+            --bg: #000080;
+            --text: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="%23ff00ff" stroke="%2300ffff" stroke-width="2"><path d="M7 2l12 11-5 1 3 5-3 1-3-5-4 4z"/></svg>'), auto;
+        }
+        
+        body {
+            font-family: 'VT323', monospace;
+            background-color: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(var(--accent1) 2px, transparent 2px),
+                radial-gradient(var(--accent2) 2px, transparent 2px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+        }
+        
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Header Area */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            width: 100%;
+        }
+        
+        .header h1 {
+            font-size: 72px;
+            text-shadow: 
+                -3px -3px 0 var(--accent1),
+                3px 3px 0 var(--secondary),
+                0 0 15px var(--primary);
+            margin-bottom: 10px;
+            animation: rainbow 3s linear infinite;
+            letter-spacing: 2px;
+            transform: perspective(500px) rotateX(10deg);
+        }
+        
+        .construction {
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            animation: bounce 2s infinite;
+            transform-origin: bottom center;
+        }
+        
+        .construction img {
+            width: 120px;
+            height: auto;
+        }
+        
+        /* Mascot */
+        .mascot {
+            position: absolute;
+            left: 5%;
+            top: 20%;
+            width: 150px;
+            height: 150px;
+            animation: float 4s ease-in-out infinite;
+            z-index: 10;
+        }
+        
+        /* Main Link Area */
+        .links-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            width: 90%;
+            max-width: 600px;
+            perspective: 1000px;
+        }
+        
+        .link-box {
+            background: linear-gradient(45deg, var(--secondary), var(--primary));
+            border: 8px outset var(--accent1);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 0 0 4px var(--accent2),
+                0 8px 20px rgba(0, 0, 0, 0.6);
+        }
+        
+        .link-box:hover {
+            transform: scale(1.05) rotate(-2deg);
+            box-shadow: 
+                0 0 0 4px var(--accent2),
+                0 12px 30px rgba(0, 0, 0, 0.8);
+        }
+        
+        .link-box::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+            opacity: 0;
+            transform: rotate(30deg);
+            transition: opacity 0.3s, transform 1s;
+            pointer-events: none;
+        }
+        
+        .link-box:hover::before {
+            opacity: 0.4;
+            transform: rotate(0deg);
+        }
+        
+        a.link-box {
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            padding: 20px;
+        }
+        
+        .link-text {
+            font-size: 32px;
+            display: block;
+            text-shadow: 2px 2px 0 #000;
+            margin-top: 10px;
+        }
+        
+        /* Link Icons */
+        .link-icon {
+            font-size: 48px;
+            display: block;
+            filter: drop-shadow(0 0 5px var(--accent2));
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 16px;
+            padding: 20px;
+            border-top: 2px dashed var(--accent1);
+            width: 100%;
+        }
+        
+        .visitor-counter {
+            background: #000;
+            border: 2px solid var(--accent2);
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            display: inline-block;
+            margin-top: 10px;
+            box-shadow: 0 0 10px var(--secondary);
+        }
+        
+        /* Animated elements */
+        .marquee {
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+            background: var(--accent1);
+            padding: 5px 0;
+            color: var(--bg);
+            font-weight: bold;
+            margin-bottom: 30px;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
+        }
+        
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+            padding-left: 100%;
+        }
+        
+        /* Background Elements */
+        .star {
+            position: absolute;
+            background-color: var(--text);
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            animation: twinkle 2s infinite;
+        }
+        
+        /* Cursor Trail */
+        .cursor-trail {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--primary);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: screen;
+            animation: fadeOut 1s forwards;
+        }
+        
+        /* Flying Plane with Banner */
+        .plane-container {
+            position: fixed;
+            top: 100px;
+            right: -300px;
+            height: 120px;
+            pointer-events: none;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            flex-direction: row-reverse;
+            transform-origin: right center;
+        }
+        
+        .plane {
+            width: 80px;
+            height: 50px;
+            position: relative;
+            z-index: 1001;
+            transform: scaleX(-1); /* Flip the plane to face left */
+        }
+        
+        .banner {
+            background: white;
+            border: 3px solid var(--primary);
+            padding: 10px;
+            border-radius: 10px;
+            font-family: monospace;
+            color: var(--bg);
+            font-weight: bold;
+            min-width: 200px;
+            max-width: 400px;
+            font-size: 14px;
+            position: relative;
+            margin-right: 10px;
+            box-shadow: 0 4px 0 rgba(0,0,0,0.3);
+            white-space: pre-wrap;
+            word-break: break-word;
+            text-align: center;
+        }
+        
+        .banner::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -20px;
+            width: 30px;
+            height: 3px;
+            background-color: var(--accent1);
+            transform: translateY(-50%);
+        }
+        
+        /* Animations */
+        @keyframes rainbow {
+            0% { color: #ff0000; }
+            14% { color: #ff7f00; }
+            28% { color: #ffff00; }
+            42% { color: #00ff00; }
+            57% { color: #0000ff; }
+            71% { color: #4b0082; }
+            85% { color: #9400d3; }
+            100% { color: #ff0000; }
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+        
+        @keyframes fadeOut {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0.3); }
+        }
+        
+        @keyframes flyAcross {
+            0% { transform: translateX(0) rotate(0deg); }
+            10% { transform: translateX(calc(-20vw)) rotate(5deg); }
+            20% { transform: translateX(calc(-40vw)) rotate(-5deg); }
+            40% { transform: translateX(calc(-60vw)) rotate(3deg); }
+            60% { transform: translateX(calc(-80vw)) rotate(-2deg); }
+            80% { transform: translateX(calc(-100vw)) rotate(2deg); }
+            100% { transform: translateX(calc(-120vw)) rotate(0deg); }
+        }
+        
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .links-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 48px;
+            }
+            
+            .mascot {
+                width: 100px;
+                height: 100px;
+                top: 10%;
+            }
+            
+            .construction {
+                width: 80px;
+                top: -15px;
+                right: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<!-- <div class="central-column-block"> -->
-
-    <div class="content">
-
-  
-<pre> ---------------------------- <span id="dark-mode-toggle">dark mode</span> -- 
- --- harry taussig ----------------------- 
- ----------------------------------:)----- 
- ----------------------------------------- 
- ------------------------ <a href="https://twitter.com/harry_taussig" target="_blank">twitter</a> -------- 
- -------<3-------------------------------- </pre>
-
-
-
-    </div>
-
-    <div class="content">
-        <p class="home-headings">_⎽-⎻⎺⎺⎻-⎽__⎽-<{ COACHING }>-⎽__⎽-⎻⎺⎺⎻-⎽_</p>
-        <p><a href="https://teebarnett.com/harry" target="_blank">learn more</a></p>
-        <p><a href="https://app.read.ai/analytics/meetings/01HH06PNPVSYYRP1RTPH3764NA?utm_source=Share_Nav" target="_blank">my worldview</a></p>
-      </div>
-    
-<!--       
-      <div class="content">
-        <p>-⎽__⎽-⎻⎺⎺⎻-⎽__⎽--⎻⎺⎺⎻-</p>
-      </div> -->
-      
-      <div class="content">
-        <p class="home-headings">✿❯─────「 LIFE 」─────❮✿</p>
-        <p><a href="https://x.com/harry_taussig/status/1721277377659940907?s=20" target="_blank">generative art</a></p>
-        <p><a href="https://harrytaussig.substack.com/" target="_blank">substack</a></p>
-        <!-- <p><a href="#" target="_blank">writing</a></p> -->
-        <p><a href="https://www.youtube.com/watch?v=rA-S23Wf3hs" target="_blank">a story I told</a></p>
-      </div>
-
-</div>
-
-
-       <!-- /* DARK MODE TINGS */ -->
-       <script src="darkMode.js"></script>
-
-<div id="ascii-middle" class="ascii-art">
- .-------------.       .    .   *       *   
-/_/_/_/_/_/_/_/ \         *       .   )    .
-//_/_/_/_/_/_// _\  __          .        .   
-/_/_/_/_/_/_/_/|/ \.' .`-o                    
-|             ||-'(/ ,--'                    
-|    hjm      ||  _ |                        
-|             ||'' ||                        
-|_____________|| |_|L        <a href="https://harrytaussig.substack.com/" target="_blank">join email list</a> 
-</div>
-
-
-<!-- 
-       <div id="ascii-top-left" class="ascii-art">
-        ''',      
-     o_)O \)____)"
-      \_        ) 
- woof!  '',,,,,,  
-          ||  ||  
-         "--'"--' 
+    <!-- Flying Plane with Banner -->
+    <div class="plane-container">
+        <div class="banner" id="message-banner">
+            Your dog loves you!
         </div>
-         -->
-
-
-        <!-- <div id="ascii-middle" class="ascii-art">
-            ^^                   @@@@@@@@@                              
-       ^^       ^^            @@@@@@@@@@@@@@@                           
-                            @@@@@@@@@@@@@@@@@@              ^^          
-                           @@@@@@@@@@@@@@@@@@@@                         
- ~~~~ ~~ ~~~~~ ~~~~~~~~ ~~ &&&&&&&&&&&&&&&&&&&& ~~~~~~~ ~~~~~~~~~~~ ~~~ 
- ~         ~~   ~  ~       ~~~~~~~~~~~~~~~~~~~~ ~       ~~     ~~ ~     
-   ~      ~~      ~~ ~~ ~~  ~~~~~~~~~~~~~ ~~~~  ~     ~~~    ~ ~~~  ~ ~~
-   ~  ~~     ~         ~      ~~~~~~  ~~ ~~~       ~~ ~ ~~  ~~ ~        
- ~  ~       ~ ~      ~           ~~ ~~~~~~  ~      ~~  ~             ~~ 
-       ~             ~        ~      ~      ~~   ~             ~        
-
-        </div> -->
-
-<!-- 
-        <div id="ascii-bottom-left" class="ascii-art">
-                             __
-            ,                  ," e`--o
-           ((                 (  | __,'
-          \\~----------------' \_;/
-          (                      /
-          /) ._______________.  )
-         (( (               (( (
-            ``-'               ``-‘hjw
+        <div class="plane">
+            <img src="/api/placeholder/80/50" alt="Retro Plane" />
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>HARRY TAUSSIG</h1>
+            <div class="construction">
+                <img src="/api/placeholder/120/100" alt="Under Construction" />
+            </div>
         </div>
         
-        <div id="ascii-bottom-right" class="ascii-art">
-            _=,_         
-            o_/6 /#\        
-            \__ |##/        
-             ='|--\         
-               /   #'-.     
-               \#|_   _'-. /
-                |/ \_( # |" 
-        snd    C/ ,--___/   
- 
-        </div> -->
-
-
-
+        <div class="mascot">
+            <img src="/api/placeholder/150/150" alt="Harry's Mascot" />
+        </div>
+        
+        <div class="marquee">
+            <div class="marquee-content">
+                WELCOME WELCOME WELCOME! ALL YOUR PARTS ARE WELCOME HERE! MAY THE 8-YEAR-OLD INSIDE OF YOU HAVE A WARM GLASS OF MILK AND A CHOCOLATE CHIP COOKIE! THERE'S NOTHING YOU NEED TO DO TO BE GOOD ENOUGH IN THIS MOMENT!
+            </div>
+        </div>
+        
+        <div class="links-container">
+            <a href="https://www.youtube.com/watch?v=faWoXmkTVOk" class="link-box" id="podcast-link">
+                <span class="link-icon">🎙️</span>
+                <span class="link-text">PODCAST</span>
+            </a>
+            
+            <a href="https://harrytaussig.substack.com/p/not-back-to-school-camp-an-outsiders" class="link-box" id="substack-link">
+                <span class="link-icon">📝</span>
+                <span class="link-text">SUBSTACK</span>
+            </a>
+            
+            <a href="https://x.com/harry_taussig" class="link-box" id="twitter-link">
+                <span class="link-icon">🐦</span>
+                <span class="link-text">TWITTER</span>
+            </a>
+            
+            <a href="https://docs.google.com/document/d/1ob3sH8sFbJ3fDXdlSbQs4nSyFdGEEMGvPZrRmP_QRdE/edit?usp=sharing" class="link-box" id="favorites-link">
+                <span class="link-icon">⭐</span>
+                <span class="link-text">MY FAVORITE LINKS</span>
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 HARRY TAUSSIG • <span style="color: var(--accent1); text-shadow: 2px 2px 0px var(--primary); animation: rainbow 3s linear infinite; letter-spacing: 1px; font-weight: bold;">✨✨ MADE WITH LOVE ✨✨</span></p>
+            <div class="visitor-counter">
+                LOOK AT YOU, SHOWING UP PERFECTLY AS YOU ARE
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Banner Messages
+        const bannerMessages = [
+            "Your dog loves you!",
+            "I hope you're having a lovely day!",
+            "You have a great laugh!",
+            "The world is better with you in it!",
+            "That thing you're worried about will work out fine!",
+            "Someone was just thinking about you!",
+            "You deserve that nap you've been wanting!",
+            "Wow, look at you go! You're doing great!",
+            "If you see this, you must say 'beep boop'!",
+            "You deserve that cookie/cake/treat you've been thinking about!",
+            "All your parts are welcome here!",
+            "Your inner critic deserves a hug too!",
+            "Your protector parts are doing their best!",
+            "That feeling is a gift, even when it hurts!",
+            "Your nervous system thanks you for being here",
+            "Your friend just told me they'd absolutely love to hear from you!",
+            "Your outie has relatively healthy social media consumption habits!",
+            "The universe is literally held together by love (and physics)!",
+            "There's a part of you that already knows what to do next!",
+            "Shout out to your body for all the work it does for you!",
+            "I am so impressed that your heart just keeps beating regardless of all you've been through!",
+            "You are exactly where you need to be in life right now!",
+            "Wow! Look at you! Your 7-year-old self must be so proud of you!",
+            "Crazy how the physical Earth is supporting you at this very moment, and there's nothing you need to do to deserve it!",
+            "Wow! I can't believe how well you've integrated that cringey memory from high school! It really made you who you are today!",
+            "The next stranger you meet might become your friend!",
+            "You belong <3",
+            "You don't need to do anything to deserve to exist, but you're so cool, that you deserve to exist anyway :)",
+            "Did you just feel that? That was you being the natural expression of the universe!",
+            "That emotion you can't name has a name in another language",
+            "Take a breath. Your lungs love oxygen!",
+            "You're allowed to change your mind, always",
+            "Your outie has a cool personal website!",
+            "It's someone's birthday today!",
+            "You are the main character of your story!"
+        ];
+        
+        // Create stars
+        for (let i = 0; i < 50; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.animationDelay = `${Math.random() * 2}s`;
+            document.body.appendChild(star);
+        }
+        
+        // Cursor trail effect
+        document.addEventListener('mousemove', function(e) {
+            const trail = document.createElement('div');
+            trail.classList.add('cursor-trail');
+            trail.style.left = e.pageX + 'px';
+            trail.style.top = e.pageY + 'px';
+            document.body.appendChild(trail);
+            
+            // Remove trail element after animation completes
+            setTimeout(() => {
+                trail.remove();
+            }, 1000);
+        });
+        
+        // Sound effects on hover
+        const linkBoxes = document.querySelectorAll('.link-box');
+        const sounds = ['beep', 'boop', 'zing', 'pop'];
+        
+        linkBoxes.forEach((box, index) => {
+            box.addEventListener('mouseenter', () => {
+                // This would play a sound if implemented
+                console.log(`Playing sound: ${sounds[index % sounds.length]}`);
+                
+                // Add a visual effect on hover
+                const emoji = box.querySelector('.link-icon');
+                emoji.style.transform = 'scale(1.2) rotate(10deg)';
+                setTimeout(() => {
+                    emoji.style.transform = '';
+                }, 300);
+            });
+        });
+        
+        // Easter egg - konami code
+        let konamiIndex = 0;
+        const konamiCode = [
+            'ArrowUp', 'ArrowUp', 
+            'ArrowDown', 'ArrowDown', 
+            'ArrowLeft', 'ArrowRight', 
+            'ArrowLeft', 'ArrowRight', 
+            'b', 'a'
+        ];
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === konamiCode[konamiIndex]) {
+                konamiIndex++;
+                if (konamiIndex === konamiCode.length) {
+                    // Activate easter egg
+                    document.body.style.backgroundColor = '#ff00ff';
+                    setTimeout(() => {
+                        document.body.style.backgroundColor = '';
+                    }, 1000);
+                    konamiIndex = 0;
+                }
+            } else {
+                konamiIndex = 0;
+            }
+        });
+        
+        // Bouncing mascot on click
+        const mascot = document.querySelector('.mascot');
+        mascot.addEventListener('click', () => {
+            mascot.style.animation = 'none';
+            mascot.offsetHeight; // Trigger reflow
+            mascot.style.animation = 'float 0.5s ease-in-out 3';
+            
+            // Reset to original animation after the bounce
+            setTimeout(() => {
+                mascot.style.animation = 'float 4s ease-in-out infinite';
+            }, 1500);
+        });
+        
+        // Flying plane with banner
+        const planeContainer = document.querySelector('.plane-container');
+        const messageBanner = document.getElementById('message-banner');
+        
+        function flyPlane() {
+            // Select random message
+            const randomMessage = bannerMessages[Math.floor(Math.random() * bannerMessages.length)];
+            messageBanner.innerHTML = randomMessage;
+            
+            // Position plane off-screen to the right
+            planeContainer.style.right = '-300px';
+            
+            // Randomize vertical position between top 10% and 40% of screen
+            const randomTop = Math.floor(Math.random() * 30) + 10;
+            planeContainer.style.top = `${randomTop}vh`;
+            
+            // Make plane visible
+            planeContainer.style.display = 'flex';
+            
+            // Start animation
+            planeContainer.style.animation = 'flyAcross 12s linear forwards';
+            
+            // Hide plane after animation
+            setTimeout(() => {
+                planeContainer.style.display = 'none';
+                planeContainer.style.animation = 'none';
+            }, 12000);
+        }
+        
+        // Initial plane fly after page load - back to original 3000ms
+        setTimeout(flyPlane, 3000);
+        
+        // Fly plane at random intervals - back to original 12-17 seconds
+        setInterval(() => {
+            const randomDelay = Math.floor(Math.random() * 5000) + 12000; // 12-17 seconds
+            setTimeout(flyPlane, randomDelay);
+        }, 17000);
+    </script>
 </body>
 </html>
