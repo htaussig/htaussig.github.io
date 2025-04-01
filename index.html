@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harry Taussig</title>
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+    <link rel="icon" type="image/png" href="favicon/favicon.png">
     <style>
         /* Global Styles */
         @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
@@ -213,12 +215,13 @@
         
         /* Background Elements */
         .star {
-            position: absolute;
+            position: fixed;
             background-color: var(--text);
             width: 3px;
             height: 3px;
             border-radius: 50%;
             animation: twinkle 2s infinite;
+            z-index: -1;
         }
         
         /* Cursor Trail */
@@ -333,27 +336,272 @@
             100% { transform: translateX(calc(-120vw)) rotate(0deg); }
         }
         
-        /* Media Queries */
-        @media (max-width: 768px) {
-            .links-container {
-                grid-template-columns: 1fr;
+        /* Broken Projects Button */
+        .broken-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            position: relative;
+            perspective: 800px;
+            pointer-events: auto; /* Ensure container allows clicks */
+        }
+        
+        .broken-link-box {
+            width: 280px;
+            background: linear-gradient(45deg, var(--secondary), var(--primary));
+            border: 8px outset var(--accent1);
+            border-right-width: 5px;
+            border-bottom-width: 12px;
+            border-left-style: double;
+            border-top-right-radius: 12px;
+            border-bottom-left-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: visible;
+            box-shadow: 
+                0 0 0 4px var(--accent2),
+                0 8px 20px rgba(0, 0, 0, 0.6);
+            transform: perspective(500px) rotateX(5deg) rotateY(-3deg) rotateZ(2deg);
+            animation: glitch 3s infinite, wiggle 7s ease-in-out infinite;
+            text-decoration: none;
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 5; /* Increased z-index */
+        }
+        
+        .broken-link-box::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+            opacity: 0;
+            transform: rotate(30deg);
+            transition: opacity 0.3s, transform 1s;
+            pointer-events: none;
+        }
+        
+        .broken-link-box:hover::before {
+            opacity: 0.4;
+            transform: rotate(0deg);
+        }
+        
+        .broken-link-text {
+            font-size: 32px;
+            display: block;
+            text-shadow: 2px 2px 0 #000, -1px -1px 0 var(--accent1);
+            margin-top: 10px;
+            animation: textFlicker 5s infinite;
+            transform: skewX(-5deg);
+            letter-spacing: 1px;
+            position: relative;
+        }
+        
+        /* Glitch effect */
+        .broken-link-text::before {
+            content: "MY PROJECTS";
+            position: absolute;
+            left: -2px;
+            top: 0;
+            color: var(--accent1);
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            animation: glitchText 3.5s infinite;
+            z-index: -1;
+            opacity: 0.6;
+            text-shadow: none;
+        }
+        
+        .broken-link-text::after {
+            content: "MY PROJECTS";
+            position: absolute;
+            left: 2px;
+            top: 0;
+            color: var(--primary);
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            animation: glitchText 3s infinite reverse;
+            z-index: -2;
+            opacity: 0.6;
+            text-shadow: none;
+        }
+        
+        /* Hanging screw */
+        .broken-screw {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #777;
+            border-radius: 50%;
+            border: 2px solid #444;
+            right: 10px;
+            top: -5px;
+            transform-origin: center;
+            animation: looseScrewSpin 5s ease-in-out infinite;
+            box-shadow: 0 0 5px rgba(0,0,0,0.5);
+            pointer-events: none; /* Prevent screw from capturing clicks */
+        }
+        
+        .broken-screw::before {
+            content: "+";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 8px;
+            color: #000;
+            pointer-events: none;
+        }
+        
+        /* Falling piece */
+        .falling-piece {
+            position: absolute;
+            width: 25px;
+            height: 35px;
+            background: linear-gradient(45deg, var(--secondary), var(--primary));
+            border: 3px outset var(--accent1);
+            right: -15px;
+            top: 20px;
+            animation: fallingPiece 10s ease-in-out infinite;
+            transform-origin: top left;
+            z-index: 1;
+            pointer-events: none; /* Ensure this doesn't block clicks */
+        }
+        
+        /* Construction tape */
+        .construction-tape {
+            position: absolute;
+            width: 200%;
+            height: 20px;
+            background: repeating-linear-gradient(
+                45deg,
+                #000,
+                #000 10px,
+                #ff0 10px,
+                #ff0 20px
+            );
+            top: 110%;
+            left: -50%;
+            transform: rotate(-5deg);
+            z-index: 1;
+            opacity: 0.8;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            pointer-events: none; /* Prevent tape from capturing clicks */
+        }
+        
+        /* Loading bar that never completes */
+        .loading-bar {
+            position: absolute;
+            bottom: -15px;
+            left: 20px;
+            width: 70%;
+            height: 8px;
+            background-color: #222;
+            border-radius: 5px;
+            overflow: hidden;
+            border: 1px solid var(--accent2);
+            z-index: 3;
+            pointer-events: none; /* Prevent loading bar from capturing clicks */
+        }
+        
+        .loading-bar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 30%;
+            background-color: var(--accent2);
+            animation: loadingBar 8s infinite;
+            border-radius: 3px;
+            pointer-events: none;
+        }
+        
+        /* Animation keyframes */
+        @keyframes glitch {
+            0%, 100% {
+                clip-path: inset(0 0 0 0);
             }
-            
-            .header h1 {
-                font-size: 48px;
+            20% {
+                clip-path: inset(5% 0 0 0);
             }
-            
-            .mascot {
-                width: 100px;
-                height: 100px;
-                top: 10%;
+            40% {
+                clip-path: inset(0 0 5% 0);
             }
-            
-            .construction {
-                width: 80px;
-                top: -15px;
-                right: 10px;
+            60% {
+                clip-path: inset(0 10% 0 0);
             }
+            80% {
+                clip-path: inset(0 0 0 5%);
+            }
+        }
+        
+        @keyframes textFlicker {
+            0%, 100% { opacity: 1; }
+            8%, 10% { opacity: 0.8; }
+            12%, 20% { opacity: 1; }
+            35%, 35.5% { opacity: 0.6; }
+            36%, 80% { opacity: 1; }
+            92%, 92.5% { opacity: 0.7; }
+            93%, 93.5% { opacity: 1; }
+        }
+        
+        @keyframes wiggle {
+            0%, 100% { transform: perspective(500px) rotateX(5deg) rotateY(-3deg) rotateZ(2deg); }
+            25% { transform: perspective(500px) rotateX(7deg) rotateY(-5deg) rotateZ(3deg); }
+            50% { transform: perspective(500px) rotateX(3deg) rotateY(-2deg) rotateZ(1deg); }
+            75% { transform: perspective(500px) rotateX(6deg) rotateY(-4deg) rotateZ(2.5deg); }
+        }
+        
+        @keyframes glitchText {
+            0%, 100% { clip-path: inset(0 0 0 0); }
+            20% { clip-path: inset(20% 0 0 0); }
+            40% { clip-path: inset(0 0 20% 0); }
+            60% { clip-path: inset(0 25% 0 0); }
+            80% { clip-path: inset(0 0 0 25%); }
+        }
+        
+        @keyframes looseScrewSpin {
+            0%, 100% { transform: rotate(0deg); }
+            20% { transform: rotate(90deg); }
+            40% { transform: rotate(180deg); }
+            60% { transform: rotate(270deg); }
+            80% { transform: rotate(360deg); }
+        }
+        
+        @keyframes fallingPiece {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(15deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(25deg); }
+            85% { transform: rotate(5deg); }
+        }
+        
+        @keyframes loadingBar {
+            0%, 100% { left: 0; width: 30%; }
+            50% { left: 70%; width: 30%; }
+            75% { left: 50%; width: 20%; }
+        }
+        
+        /* Make button shake more on hover */
+        .broken-link-box:hover {
+            animation: glitch 1s infinite, intensifiedWiggle 2s ease-in-out infinite;
+        }
+        
+        @keyframes intensifiedWiggle {
+            0%, 100% { transform: perspective(500px) rotateX(7deg) rotateY(-6deg) rotateZ(3deg); }
+            25% { transform: perspective(500px) rotateX(9deg) rotateY(-8deg) rotateZ(5deg); }
+            50% { transform: perspective(500px) rotateX(6deg) rotateY(-4deg) rotateZ(2deg); }
+            75% { transform: perspective(500px) rotateX(10deg) rotateY(-7deg) rotateZ(4deg); }
         }
     </style>
 </head>
@@ -362,6 +610,18 @@
     <div class="plane-container">
         <div class="banner" id="message-banner">
             Your dog loves you!
+        </div>
+        
+        <!-- Broken Projects Button -->
+        <div class="broken-container">
+            <a href="https://docs.google.com/document/d/17kmkz6P7aW2vGeMF1Hz_XJbUBQADYsiBAf7NtvQWkIA/edit?tab=t.0" class="broken-link-box">
+                <div class="broken-screw"></div>
+                <div class="falling-piece"></div>
+                <span class="link-icon" style="font-size: 42px; animation: textFlicker 4s infinite; position: relative; z-index: 6;">🚧</span>
+                <span class="broken-link-text" style="position: relative; z-index: 6;">MY PROJECTS</span>
+                <div class="loading-bar"></div>
+                <div class="construction-tape"></div>
+            </a>
         </div>
         <div class="plane">
             <img src="/api/placeholder/80/50" alt="Retro Plane" />
@@ -457,14 +717,37 @@
         ];
         
         // Create stars
-        for (let i = 0; i < 50; i++) {
-            const star = document.createElement('div');
-            star.classList.add('star');
-            star.style.left = `${Math.random() * 100}%`;
-            star.style.top = `${Math.random() * 100}%`;
-            star.style.animationDelay = `${Math.random() * 2}s`;
-            document.body.appendChild(star);
+        function createStars() {
+            // Remove any existing stars first
+            document.querySelectorAll('.star').forEach(star => star.remove());
+            
+            // Get viewport dimensions
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+            
+            // Create new stars based on viewport size
+            for (let i = 0; i < 50; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                // Position using pixels based on viewport
+                star.style.left = `${Math.random() * viewportWidth}px`;
+                star.style.top = `${Math.random() * viewportHeight}px`;
+                star.style.animationDelay = `${Math.random() * 2}s`;
+                
+                document.body.appendChild(star);
+            }
         }
+        
+        // Create stars initially
+        createStars();
+        
+        // Recreate stars when window is resized
+        window.addEventListener('resize', () => {
+            // Debounce the resize event
+            clearTimeout(window.resizeTimeout);
+            window.resizeTimeout = setTimeout(createStars, 200);
+        });
         
         // Cursor trail effect
         document.addEventListener('mousemove', function(e) {
